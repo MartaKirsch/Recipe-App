@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/public/logIn/style.css" type="text/css">
+    <link rel="stylesheet" href="/public/nav/style.css" type="text/css">
+    <title></title>
+  </head>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <!-- <div id="wrongLoginData">
+      Wrong log-in data!
+    </div> -->
+    <main>
+      <div id="wrapper">
+
+        <div id="leftWrapper" class="sidewrapper">
+          <div id="stickyLeft">
+            <img src="public/img/cupcake.png" alt="">
+            <div id="underImgDescription">
+              <h1>Log in and let's get going!</h1>
+              <form action="/account/checkLogInData" method="post">
+                <input autocomplete="off" type="text" name="login" placeholder="Enter your login or email">
+                <input type="password" name="password" placeholder="Enter your password">
+                <input type="submit" name="" value="Log me in!">
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="rightWrapper" class="sidewrapper">
+          <div class="wrapperContent">
+            <h2>You don't have an account?</h2>
+            <h1>Register here!</h1>
+            <form action="/account/checkLogInData" method="post">
+              <input autocomplete="off" type="text" name="login" placeholder="Enter your login">
+              <div class="error">This login is already in use!</div>
+              <input autocomplete="off" type="text" name="email" placeholder="Enter your email">
+              <div class="error"></div>
+              <input type="password" name="password" placeholder="Enter your password">
+              <div class="error"></div>
+              <h2>Select your avatar:</h2>
+              <div id="imgs">
+                <input type="checkbox" data-num="1" id="myCheckbox1" />
+                <label for="myCheckbox1"><img src="public/img/cupcake1.png" /></label>
+
+                <input type="checkbox" data-num="2" id="myCheckbox2" />
+                <label for="myCheckbox2"><img src="public/img/cupcake2.png" /></label>
+
+                <input type="checkbox" data-num="3" id="myCheckbox3" />
+                <label for="myCheckbox3"><img src="public/img/cupcake3.png" /></label>
+
+                <input type="checkbox" data-num="4" id="myCheckbox4" />
+                <label for="myCheckbox4"><img src="public/img/cupcake4.png" /></label>
+
+                <input type="checkbox" data-num="5" id="myCheckbox5" />
+                <label for="myCheckbox5"><img src="public/img/cupcake5.png" /></label>
+
+                <input type="checkbox" data-num="6" id="myCheckbox6" />
+                <label for="myCheckbox6"><img src="public/img/cupcake6.png" /></label>
+              </div>
+              <div class="error"></div>
+              <input type="submit" name="" value="Register!">
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+    <div id="wrongLoginData">
+      Wrong log-in data!
+    </div>
+  </body>
+</html>

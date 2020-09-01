@@ -1,0 +1,164 @@
+@media (min-width:1600px){
+  #stickyLeft
+  {
+    position: sticky;
+    position: -webkit-sticky;
+    top:7.6vw;
+  }
+
+  form
+  {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form h2
+  {
+    margin-top:0;
+  }
+
+  #rightWrapper img
+  {
+    box-shadow: none;
+    border-radius: 15px;
+    width: 15vw;
+    height: auto;
+    margin: 0 auto 2vw;
+  }
+
+  #leftWrapper
+  {
+    padding: 1vw 1vw 0;
+  }
+
+  #rightWrapper
+  {
+    justify-content: flex-start;
+    align-content: center;
+  }
+
+  input[type="text"], select
+  {
+    background-color: var(--lightgrey);
+    margin: 0 auto 3vw;
+    width: 60%;
+    padding: 1vw;
+    font-size: 1vw;
+    border-radius: 15px;
+    border: 2px solid var(--hotpink);
+    transition: width .4s ease-out;
+  }
+
+  input[type="text"]:focus
+  {
+    width: 70%;
+    background-color: var(--mediumgrey);
+    outline: none;
+    border: 2px solid var(--lime);
+  }
+
+  select:focus
+  {
+    background-color: var(--mediumgrey);
+    outline: none;
+    border: 2px solid var(--lime);
+  }
+
+  input[type="submit"]
+  {
+    cursor:pointer;
+    text-transform: uppercase;
+    color:var(--lightgrey);
+    background-color: var(--hotpink);
+    margin: auto;
+    width: 50%;
+    padding: .8vw;
+    font-size: 1vw;
+    border-radius: 15px;
+    border: 2px solid var(--lightgrey);
+  }
+
+  input[type="submit"]:focus, input[type="submit"]:hover
+  {
+    outline:none;
+    color: var(--darkgrey);
+    background-color: var(--lime);
+  }
+
+  label
+  {
+    font-size: 1.5vw;
+    color: var(--lightgrey);
+    text-decoration: underline;
+    text-decoration-color: var(--hotpink);
+    margin-bottom: 1vw;
+  }
+
+  .moreSelects
+  {
+    margin: auto;
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+  }
+
+  .moreSelects select
+  {
+    width: 40%;
+  }
+
+
+  #ingredientsWrapper
+  {
+    margin-bottom: 2vw;
+  }
+
+  .moreTexts
+  {
+    border-bottom: 1px dashed var(--lightgrey);
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .moreTexts input
+  {
+    margin: 1vw 0;
+  }
+
+  .moreTexts input:first-child
+  {
+    width: 50%;
+  }
+
+  .moreTexts input:nth-child(2)
+  {
+    width: 20%;
+  }
+
+  .moreTexts input:nth-child(3)
+  {
+    width: 20%;
+  }
+
+  #addMoreTexts
+  {
+    cursor: pointer;
+    background-color: var(--lime);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vw auto 0;
+    font-size: 1.5vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 15px;
+  }
+
+  #addMoreTexts:hover
+  {
+    background-color: var(--lime-hover);
+  }
+
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/public/account/style.css" type="text/css">
+    <link rel="stylesheet" href="/public/nav/style.css" type="text/css">
+    <title></title>
+  </head>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <main>
+      <div id="wrapper">
+
+        <div id="leftWrapper" class="sidewrapper">
+          <div id="stickyLeft">
+            <img src="/public/img/cupcake1.png" alt="">
+            <div id="underImgDescription">
+              <h1>Welcome Ahiru!</h1>
+              <p>You will be able to store all your favourite recipes here! You can categorize them by taste (sweet/sour/bitter/other), by number of calories or by the meal you most often eat it for. Our website is going to allow you to search other users' recipes and save them in one place! Check it out yourself!</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="rightWrapper" class="sidewrapper">
+
+          <div id="savedAdded">
+            <div class="clicked">Saved</div>
+            <div>Added</div>
+          </div>
+
+          <div class="filter search">
+            <input autocomplete="off" type="search" name="search" id="searchRecipes" placeholder="You can type in a name of the recipe you look for">
+          </div>
+
+          <div id="filters">
+
+            <div class="filter">
+              <label for="meal">Meal</label>
+              <select class="" name="meal">
+                <option value="none">-</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="brunch">Brunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="lunch">Lunch</option>
+                <option value="supper">supper</option>
+              </select>
+            </div>
+
+            <div class="filter">
+              <label for="taste">Taste</label>
+              <select class="" name="taste">
+                <option value="none">-</option>
+                <option value="sweet">Sweet</option>
+                <option value="sour">Sour</option>
+                <option value="spicy">Spicy</option>
+                <option value="bitter">Bitter</option>
+                <option value="fruit">Fruit</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="filter">
+              <label for="meat">Meat/Vege</label>
+              <select class="" name="meat">
+                <option value="none">-</option>
+                <option value="meat">Meat</option>
+                <option value="vege">Vege</option>
+              </select>
+            </div>
+
+            <div class="filter">
+              <label for="kcalmin">Kcal</label>
+              <input type="text" name="kcalmin">
+              <h2>-</h2>
+              <input type="text" name="kcalmax">
+            </div>
+
+          </div>
+
+          <div id="recipes">
+
+            <a href="">
+              <img src="/public/img/oatmeal.jpg" alt="">
+              <div class="recipesText">
+                <div class="recipesName">
+                  Apple Cinnamon Oatmeal
+                </div>
+                <div class="tags">
+                  <div class="tag">360kcal</div>
+                  <div class="tag">Breakfast</div>
+                  <div class="tag">Sweet</div>
+                  <div class="tag">Vege</div>
+                </div>
+              </div>
+            </a>
+
+            <a href="">
+              <img src="/public/img/oatmeal.jpg" alt="">
+              <div class="recipesText">
+                <div class="recipesName">
+                  Apple Cinnamon Oatmeal
+                </div>
+                <div class="tags">
+                  <div class="tag">360kcal</div>
+                  <div class="tag">Breakfast</div>
+                  <div class="tag">Sweet</div>
+                  <div class="tag">Vege</div>
+                </div>
+              </div>
+            </a>
+
+            <a href="">
+              <img src="/public/img/oatmeal.jpg" alt="">
+              <div class="recipesText">
+                <div class="recipesName">
+                  Apple Cinnamon Oatmeal
+                </div>
+                <div class="tags">
+                  <div class="tag">360kcal</div>
+                  <div class="tag">Breakfast</div>
+                  <div class="tag">Sweet</div>
+                  <div class="tag">Vege</div>
+                </div>
+              </div>
+            </a>
+
+            <a href="">
+              <img src="/public/img/oatmeal.jpg" alt="">
+              <div class="recipesText">
+                <div class="recipesName">
+                  Apple Cinnamon Oatmeal
+                </div>
+                <div class="tags">
+                  <div class="tag">360kcal</div>
+                  <div class="tag">Breakfast</div>
+                  <div class="tag">Sweet</div>
+                  <div class="tag">Vege</div>
+                </div>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/public/add/style.css" type="text/css">
+    <link rel="stylesheet" href="/public/nav/style.css" type="text/css">
+    <title></title>
+  </head>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <main>
+      <div id="wrapper">
+
+        <div id="leftWrapper" class="sidewrapper">
+          <div id="stickyLeft">
+            <img src="public/img/cupcake.png" alt="">
+            <div id="underImgDescription">
+              <h1>You can add your recipe here!</h1>
+              <p>You will be able to store all your favourite recipes here! You can categorize them by taste (sweet/sour/bitter/other), by number of calories or by the meal you most often eat it for. Our website is going to allow you to search other users' recipes and save them in one place! Check it out yourself!</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="rightWrapper" class="sidewrapper">
+            <img src="public/img/img.png" alt="">
+            <form action="" method="post">
+              <input type="text" name="imgurl" placeholder="Paste the image url here">
+
+              <label for="name">Your recipe name: </label>
+              <input type="text" name="name" value="" placeholder="Enter the name of your recipe">
+
+              <label for="meal">Meal you most often eat it for: </label>
+              <select class="" name="meal">
+                <option value="none">-</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="brunch">Brunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="lunch">Lunch</option>
+                <option value="supper">supper</option>
+              </select>
+
+              <label for="meatvege">Meat or vege: </label>
+              <select class="" name="meatvege">
+                <option value="none">-</option>
+                <option value="meat">Meat</option>
+                <option value="vege">Vege</option>
+              </select>
+
+              <label for="ingredients">Ingredients: </label>
+              <div id="ingredientsWrapper" name="ingredients">
+                <div class="moreTexts">
+                  <input type="text" name="ingredients[]" value="" placeholder="Enter the ingredient">
+                  <input type="text" name="amount[]" value="" placeholder="Enter the amount">
+                  <input type="text" name="kcal[]" value="" placeholder="Enter the kcal of it">
+                </div>
+
+                <div class="moreTexts">
+                  <input type="text" name="ingredients[]" value="" placeholder="Enter the ingredient">
+                  <input type="text" name="amount[]" value="" placeholder="Enter the amount">
+                  <input type="text" name="kcal[]" value="" placeholder="Enter the kcal of it">
+                </div>
+
+                <div class="moreTexts">
+                  <input type="text" name="ingredients[]" value="" placeholder="Enter the ingredient">
+                  <input type="text" name="amount[]" value="" placeholder="Enter the amount">
+                  <input type="text" name="kcal[]" value="" placeholder="Enter the kcal of it">
+                </div>
+
+                <div id="addMoreTexts">
+                  +
+                </div>
+              </div>
+
+              <label for="taste">Select tastes that describe this recipe (1 or 2)</label>
+              <div class="moreSelects" name="taste">
+                <select class="" name="taste1">
+                  <option value="none">-</option>
+                  <option value="sweet">Sweet</option>
+                  <option value="sour">Sour</option>
+                  <option value="spicy">Spicy</option>
+                  <option value="bitter">Bitter</option>
+                  <option value="fruit">Fruit</option>
+                  <option value="other">Other</option>
+                </select>
+
+                <select class="" name="taste2">
+                  <option value="none">-</option>
+                  <option value="sweet">Sweet</option>
+                  <option value="sour">Sour</option>
+                  <option value="spicy">Spicy</option>
+                  <option value="bitter">Bitter</option>
+                  <option value="fruit">Fruit</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <input type="submit" value="Add Recipe!">
+            </form>
+        </div>
+
+      </div>
+
+    </main>
+  </body>
+</html>

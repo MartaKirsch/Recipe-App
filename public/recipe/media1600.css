@@ -1,0 +1,126 @@
+@media (min-width:1600px){
+
+  #stickyLeft
+  {
+    position: sticky;
+    position: -webkit-sticky;
+    top:7.6vw;
+  }
+
+  #stickyLeft img
+  {
+    box-shadow: none;
+    border-radius: 15px;
+  }
+
+  #leftWrapper
+  {
+    padding: 1vw 1vw 0;
+  }
+
+  #rightWrapper
+  {
+    justify-content: flex-start;
+  }
+
+  #add
+  {
+    cursor: pointer;
+    color: var(--darkergrey);
+    background-color: var(--lime);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    height: 2vw;
+    width: 2vw;
+    font-size: 1.3vw;
+    position: absolute;
+    top:0;
+    /* right: 0; */
+  }
+
+  #add:hover
+  {
+    background-color: var(--lime-hover);
+  }
+
+  #tags
+  {
+    width: 100%;
+    padding: 2vw 2vw 0;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag
+  {
+    padding: .5vw;
+    font-size:1vw;
+    margin: 0 1vw 1.5vw;
+    background-color: var(--lightgrey);
+    color: var(--darkergrey);
+    border-radius: 15px;
+    border-bottom: 2px solid var(--lime);
+  }
+
+  #ingredients
+  {
+    font-family: 'Indie Flower', cursive;
+  }
+
+  .row
+  {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--lightgrey);
+    font-size: 1.5vw;
+    padding: 1vw;
+    /* border-bottom: 1px solid var(--lightgrey); */
+  }
+
+  .kcal
+  {
+    margin-left: auto;
+  }
+
+  #instruction h2
+  {
+    font-size:1.4vw;
+    color: var(--lightgrey);
+    text-decoration: underline;
+    text-decoration-color: var(--lime);
+  }
+
+  #authorFooter
+  {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  #authorFooter div
+  {
+    font-size: 1.5vw;
+    color: var(--lightgrey);
+    margin-right: 1vw;
+  }
+
+  #authorFooter a
+  {
+    font-size: 2.5vw;
+    font-family: 'Indie Flower', cursive;
+    color: var(--lime);
+  }
+
+  #authorFooter a:focus, #authorFooter a:hover
+  {
+    outline: none;
+    color: var(--lime-hover);
+    text-decoration: underline;
+  }
+
+}

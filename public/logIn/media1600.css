@@ -1,0 +1,136 @@
+@media (min-width:1600px){
+
+  #stickyLeft
+  {
+    position: sticky;
+    position: -webkit-sticky;
+    top:7.6vw;
+  }
+
+  form
+  {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form h2
+  {
+    margin-top:0;  
+  }
+
+  #underImgDescription input[type="text"], #underImgDescription input[type="password"]
+  {
+    margin: 0 auto 2vw;
+  }
+
+  input[type="text"],  input[type="password"]
+  {
+    background-color: var(--lightgrey);
+    margin: 0 auto;
+    width: 60%;
+    padding: 1vw;
+    font-size: 1vw;
+    border-radius: 15px;
+    border: 2px solid var(--hotpink);
+    transition: width .4s ease-out;
+  }
+
+   input[type="text"]:focus, input[type="password"]:focus
+  {
+    width: 70%;
+    background-color: var(--mediumgrey);
+    outline: none;
+    border: 2px solid var(--lime);
+  }
+
+  input[type="submit"]
+  {
+    cursor:pointer;
+    text-transform: uppercase;
+    color:var(--lightgrey);
+    background-color: var(--hotpink);
+    margin: auto;
+    width: 50%;
+    padding: .8vw;
+    font-size: 1vw;
+    border-radius: 15px;
+    border: 2px solid var(--lightgrey);
+  }
+
+  input[type="submit"]:focus, input[type="submit"]:hover
+  {
+    outline:none;
+    color: var(--darkgrey);
+    background-color: var(--lime);
+  }
+
+  #rightWrapper h2
+  {
+    font-size: 1.25vw;
+    color: var(--lightgrey);
+  }
+
+  .error
+  {
+    visibility: hidden;
+    color: var(--darkgrey);
+    background-color: var(--beige);
+    font-size: 1vw;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2vw;
+    width: 58%;
+    margin: 0 auto 2vw;
+  }
+
+  #imgs
+  {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  #imgs input
+  {
+    display: none;
+  }
+
+  #imgs label
+  {
+    cursor:pointer;
+    margin: 0 auto 2vw;
+    flex: 1 1 26%;
+  }
+
+  #imgs label img
+  {
+    border-radius: 10vw;
+    width:60%;
+    padding: .5vw;
+  }
+
+  :checked + label img {
+    border: 3px solid var(--lime);
+  }
+
+  #wrongLoginData
+  {
+    display: none;
+    margin: auto;
+    background-color: var(--beige);
+    position: sticky;
+    /* top:4vw; */
+    bottom:0;
+    padding: 1vw;
+    text-align: center;
+    font-size: 1vw;
+    text-transform: uppercase;
+  }
+
+}
