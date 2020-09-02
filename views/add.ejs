@@ -31,7 +31,7 @@
               <input type="text" autocomplete="off" name="name" value="" placeholder="Enter the name of your recipe">
 
               <label for="meal">Meal you most often eat it for: </label>
-              <select class="" name="meal">
+              <select class="" name="meal" data-num="2">
                 <option value="none">-</option>
                 <option value="breakfast">Breakfast</option>
                 <option value="brunch">Brunch</option>
@@ -41,7 +41,7 @@
               </select>
 
               <label for="meatvege">Meat or vege: </label>
-              <select class="" name="meatvege">
+              <select class="" name="meatvege" data-num="3">
                 <option value="none">-</option>
                 <option value="meat">Meat</option>
                 <option value="vege">Vege</option>
@@ -85,7 +85,7 @@
                 </select>
               </div>
 
-              <input type="button" value="Add Recipe!">
+              <input id="addRecipe" type="button" value="Add Recipe!">
             </form>
         </div>
 
@@ -95,5 +95,7 @@
     <script type="text/javascript" src="/public/scripts/add/globalVars.js"></script>
     <script type="text/javascript" src="/public/scripts/add/updateImg.js"></script>
     <script type="text/javascript" src="/public/scripts/add/addIngredients.js"></script>
+    <script type="text/javascript" src="/public/scripts/add/checkInputs.js"></script>
+    <script type="text/javascript" src="/public/scripts/add/checkForm.js"></script>
   </body>
 </html>

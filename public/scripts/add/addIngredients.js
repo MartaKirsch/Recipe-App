@@ -1,8 +1,8 @@
 const updateGlobalVars = ()=>{
   //update the global variables
   ingredients = document.querySelectorAll('input[name="ingredients[]"]');
-  amount = document.querySelectorAll('input[name="amount[]"]');
-  kcal = document.querySelectorAll('input[name="kcal[]"]');
+  amounts = document.querySelectorAll('input[name="amount[]"]');
+  kcals = document.querySelectorAll('input[name="kcal[]"]');
 
   //if there's only one ingredient left, make the delete button disappear
   if(ingredients.length == 1)
@@ -88,6 +88,14 @@ const addIngredients = ()=>{
   deletes.forEach((deleteButton) => {
     deleteButton.addEventListener('click', deleteIngredients);
   });
+
+  //add event listeners for text inputs
+  for(let i=0; i<ingredients.length ; i++)
+  {
+    ingredients[i].addEventListener('change', rowCheck);
+    amounts[i].addEventListener('change', rowCheck);
+    kcals[i].addEventListener('change', rowCheck);
+  }
 
   //push a new flag
   ingredientsFlags.push(0);

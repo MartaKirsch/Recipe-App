@@ -85,6 +85,25 @@
     background-color: var(--lime);
   }
 
+  input.wrongInput,select.wrongInput
+  {
+    background-color: var(--hotpink);
+    border: 2px solid var(--lightgrey);
+    color: var(--lightgrey);
+  }
+
+  input.wrongInput:hover,select.wrongInput:hover,input.wrongInput:focus,select.wrongInput:focus
+  {
+    background-color: var(--hotpink-hover);
+    border: 2px solid var(--lightgrey);
+    color: var(--lightgrey);
+  }
+
+  input.wrongInput::placeholder,select.wrongInput::placeholder
+  {
+    color: var(--lightgrey);
+  }
+
   label
   {
     font-size: 1.5vw;
