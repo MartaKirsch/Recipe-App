@@ -23,12 +23,12 @@
         </div>
 
         <div id="rightWrapper" class="sidewrapper">
-            <img src="public/img/img.png" alt="">
+            <img id="recipeImg" src="public/img/img.png" alt="">
             <form action="" method="post">
-              <input type="text" name="imgurl" placeholder="Paste the image url here">
+              <input type="text" autocomplete="off" name="imgurl" placeholder="Paste the image url here (optional)">
 
               <label for="name">Your recipe name: </label>
-              <input type="text" name="name" value="" placeholder="Enter the name of your recipe">
+              <input type="text" autocomplete="off" name="name" value="" placeholder="Enter the name of your recipe">
 
               <label for="meal">Meal you most often eat it for: </label>
               <select class="" name="meal">
@@ -50,26 +50,16 @@
               <label for="ingredients">Ingredients: </label>
               <div id="ingredientsWrapper" name="ingredients">
                 <div class="moreTexts">
-                  <input type="text" name="ingredients[]" value="" placeholder="Enter the ingredient">
-                  <input type="text" name="amount[]" value="" placeholder="Enter the amount">
-                  <input type="text" name="kcal[]" value="" placeholder="Enter the kcal of it">
+                  <input type="text" autocomplete="off" name="ingredients[]" value="" placeholder="Enter the ingredient">
+                  <input type="text" autocomplete="off" name="amount[]" value="" placeholder="Enter the amount">
+                  <input type="text" autocomplete="off" name="kcal[]" value="" placeholder="Enter its kcal">
+                  <div class="deleteIngredient" data-num="0" style="visibility:hidden">-</div>
                 </div>
 
-                <div class="moreTexts">
-                  <input type="text" name="ingredients[]" value="" placeholder="Enter the ingredient">
-                  <input type="text" name="amount[]" value="" placeholder="Enter the amount">
-                  <input type="text" name="kcal[]" value="" placeholder="Enter the kcal of it">
-                </div>
 
-                <div class="moreTexts">
-                  <input type="text" name="ingredients[]" value="" placeholder="Enter the ingredient">
-                  <input type="text" name="amount[]" value="" placeholder="Enter the amount">
-                  <input type="text" name="kcal[]" value="" placeholder="Enter the kcal of it">
-                </div>
-
-                <div id="addMoreTexts">
-                  +
-                </div>
+              </div>
+              <div id="addMoreTexts">
+                +
               </div>
 
               <label for="taste">Select tastes that describe this recipe (1 or 2)</label>
@@ -95,12 +85,15 @@
                 </select>
               </div>
 
-              <input type="submit" value="Add Recipe!">
+              <input type="button" value="Add Recipe!">
             </form>
         </div>
 
       </div>
 
     </main>
+    <script type="text/javascript" src="/public/scripts/add/globalVars.js"></script>
+    <script type="text/javascript" src="/public/scripts/add/updateImg.js"></script>
+    <script type="text/javascript" src="/public/scripts/add/addIngredients.js"></script>
   </body>
 </html>
