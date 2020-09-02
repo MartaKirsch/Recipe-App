@@ -13,6 +13,8 @@ router.get('/checkIfEmailExists/:name', accountController.checkIfEmailExists);
 
 router.get('/checkLogInData/:login/:pass', accountController.logIn);
 
+router.get('/logOut', accountController.logOut);
+
 router.post('/register', accountController.register);
 
 module.exports = router;

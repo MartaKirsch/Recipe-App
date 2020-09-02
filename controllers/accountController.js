@@ -130,10 +130,19 @@ const checkIfEmailExists = async (req, res) => {
   });
 };
 
+const logOut = (req, res) => {
+
+  req.session.destroy();
+
+  res.redirect('/');
+
+};
+
 module.exports = {
   index,
   logIn,
   register,
   checkIfLoginExists,
-  checkIfEmailExists
+  checkIfEmailExists,
+  logOut
 };

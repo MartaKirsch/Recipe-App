@@ -89,8 +89,8 @@
   {
     font-size: 1.5vw;
     color: var(--lightgrey);
-    text-decoration: underline;
-    text-decoration-color: var(--hotpink);
+    /* text-decoration: underline;
+    text-decoration-color: var(--hotpink); */
     margin-bottom: 1vw;
   }
 
