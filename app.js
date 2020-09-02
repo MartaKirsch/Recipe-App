@@ -9,16 +9,25 @@ const bodyParser = require('body-parser');
 //create app
 const app = express();
 
-//db connection
-// mongoose.connect(dbURI,{ useNewUrlParser: true, useUnifiedTopology: true })
-//   .then((result)=>{console.log('connected to db');app.listen(port);})
-//   .catch((err)=>{console.log('there is an error: '+err);});
+const dbURI = 'mongodb+srv://pandeu:alabala00@cluster0.zyijq.mongodb.net/Recipe-App?retryWrites=true&w=majority';
 
-//listen to port 3000
-app.listen('3000');
+const port = 3000;
+
+//db connection
+mongoose.connect(dbURI,{ useNewUrlParser: true, useUnifiedTopology: true })
+  .then((result)=>{
+    console.log('connected to db');
+    app.listen(port);
+  })
+  .catch((err)=>{
+    console.log('there is an error: '+err);
+  });
 
 //static files
 app.use('/public', express.static('public'));
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({extended: true}))
 
 // parse application/json
 app.use(bodyParser.json())
