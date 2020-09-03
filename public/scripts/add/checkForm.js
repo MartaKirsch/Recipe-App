@@ -11,7 +11,7 @@ const checkForm = () => {
 
   if(isOK == true)
   {
-
+    document.querySelector('#addRecipeForm').submit();
   }
   else
   {
@@ -21,6 +21,7 @@ const checkForm = () => {
     meatvege.dispatchEvent(event);
     taste1.dispatchEvent(event);
     taste2.dispatchEvent(event);
+    prepare.dispatchEvent(event);
     for(let i=0; i<ingredients.length; i++)
     {
       ingredients[i].dispatchEvent(event);
@@ -28,8 +29,8 @@ const checkForm = () => {
       kcals[i].dispatchEvent(event);
     }
   }
-  console.log(flags);
 
 };
 
+//add event listener
 document.querySelector('#addRecipe').addEventListener('click', checkForm);

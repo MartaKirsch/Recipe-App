@@ -13,7 +13,7 @@
     flex-direction: column;
     text-align: center;
     display: flex;
-    padding: 1vw;
+    padding: 1vw 1vw 0;
     justify-content: center;
   }
 

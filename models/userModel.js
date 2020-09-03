@@ -18,7 +18,10 @@ const userSchema = new Schema({
   "avatar": {
     type: Number,
     required: true
-  }
+  },
+  "savedRecipes":[{
+    type: String
+  }]
 });
 
 //create model

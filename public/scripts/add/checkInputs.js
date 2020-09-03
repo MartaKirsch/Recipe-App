@@ -136,6 +136,20 @@ const rowCheck = (e) => {
   ingredientsCheck();
 };
 
+const prepareCheck = (e) => {
+  let val = e.target.value;
+
+  if(val.length>=15)
+  {
+    flags[6] = 1;
+    e.target.classList.remove('wrongInput');
+  }
+  else
+  {
+    flags[6] = 0;
+    e.target.classList.add('wrongInput');
+  }
+};
 
 
 //add event listeners
@@ -144,6 +158,7 @@ meal.addEventListener('change', selectCheck);
 meatvege.addEventListener('change', selectCheck);
 taste1.addEventListener('change', tastesCheck);
 taste2.addEventListener('change', tastesCheck);
+prepare.addEventListener('change', prepareCheck);
 
 for(let i=0; i<ingredients.length ; i++)
 {

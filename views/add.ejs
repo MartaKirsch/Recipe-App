@@ -23,8 +23,10 @@
         </div>
 
         <div id="rightWrapper" class="sidewrapper">
+
             <img id="recipeImg" src="public/img/img.png" alt="">
-            <form action="" method="post">
+
+            <form action="/add/addRecipe" method="post" id="addRecipeForm">
               <input type="text" autocomplete="off" name="imgurl" placeholder="Paste the image url here (optional)">
 
               <label for="name">Your recipe name: </label>
@@ -84,6 +86,8 @@
                   <option value="other">Other</option>
                 </select>
               </div>
+
+              <textarea name="prepare" rows="8" cols="80" placeholder="Desribe how to prepare your recipe here"></textarea>
 
               <input id="addRecipe" type="button" value="Add Recipe!">
             </form>
