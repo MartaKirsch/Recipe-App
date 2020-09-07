@@ -4,6 +4,7 @@ const session = require('express-session');
 const accountRoutes = require('./routes/accountRoutes.js');
 const searchRoutes = require('./routes/searchRoutes.js');
 const addRoutes = require('./routes/addRoutes.js');
+const recipesRoutes = require('./routes/recipesRoutes.js');
 const bodyParser = require('body-parser');
 
 //create app
@@ -48,6 +49,7 @@ app.get('/', (req,res)=>{
 app.use('/account', accountRoutes);
 app.use('/search', searchRoutes);
 app.use('/add', addRoutes);
+app.use('/recipes', recipesRoutes);
 
 //404 page
 app.use((req,res)=>{

@@ -16,7 +16,7 @@
           <div id="stickyLeft">
             <div class="filter search">
               <input autocomplete="off" type="search" name="search" id="searchRecipes" placeholder="You can type in a name of the recipe">
-              <select class="" id="sortBy">
+              <select class="" id="sortBy" name="sortBy">
                 <option value="none">Sort By</option>
                 <option value="rateUp">Rate	&#9650 </option>
                 <option value="rateDown">Rate	&#9660 </option>
@@ -55,8 +55,8 @@
               </div>
 
               <div class="filter">
-                <label for="meat">Meat/Vege</label>
-                <select class="" name="meat">
+                <label for="meatvege">Meat/Vege</label>
+                <select class="" name="meatvege">
                   <option value="none">-</option>
                   <option value="meat">Meat</option>
                   <option value="vege">Vege</option>
@@ -65,9 +65,9 @@
 
               <div class="filter">
                 <label for="kcalmin">Kcal</label>
-                <input type="text" name="kcalmin">
+                <input autocomplete="off" type="text" name="kcalmin">
                 <h2>-</h2>
-                <input type="text" name="kcalmax">
+                <input autocomplete="off" type="text" name="kcalmax">
               </div>
 
               <input type="submit" value="Search!">
@@ -81,66 +81,7 @@
 
           <div id="recipes">
 
-            <a href="">
-              <img src="/public/img/oatmeal.jpg" alt="">
-              <div class="recipesText">
-                <div class="recipesName">
-                  Apple Cinnamon Oatmeal
-                </div>
-                <div class="tags">
-                  <div class="tag">360kcal</div>
-                  <div class="tag">Breakfast</div>
-                  <div class="tag">Sweet</div>
-                  <div class="tag">Fruit</div>
-                  <div class="tag">Vege</div>
-                </div>
-              </div>
-            </a>
 
-            <a href="">
-              <img src="/public/img/oatmeal.jpg" alt="">
-              <div class="recipesText">
-                <div class="recipesName">
-                  Apple Cinnamon Oatmeal
-                </div>
-                <div class="tags">
-                  <div class="tag">360kcal</div>
-                  <div class="tag">Breakfast</div>
-                  <div class="tag">Sweet</div>
-                  <div class="tag">Vege</div>
-                </div>
-              </div>
-            </a>
-
-            <a href="">
-              <img src="/public/img/oatmeal.jpg" alt="">
-              <div class="recipesText">
-                <div class="recipesName">
-                  Apple Cinnamon Oatmeal
-                </div>
-                <div class="tags">
-                  <div class="tag">360kcal</div>
-                  <div class="tag">Breakfast</div>
-                  <div class="tag">Sweet</div>
-                  <div class="tag">Vege</div>
-                </div>
-              </div>
-            </a>
-
-            <a href="">
-              <img src="/public/img/oatmeal.jpg" alt="">
-              <div class="recipesText">
-                <div class="recipesName">
-                  Apple Cinnamon Oatmeal
-                </div>
-                <div class="tags">
-                  <div class="tag">360kcal</div>
-                  <div class="tag">Breakfast</div>
-                  <div class="tag">Sweet</div>
-                  <div class="tag">Vege</div>
-                </div>
-              </div>
-            </a>
 
           </div>
 
@@ -150,5 +91,6 @@
 
     </main>
     <script type="text/javascript" src="/public/scripts/loadRecipes.js"></script>
+    <script type="text/javascript" src="/public/scripts/loadOnScroll.js"></script>
   </body>
 </html>
