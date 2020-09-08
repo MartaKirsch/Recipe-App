@@ -45,6 +45,17 @@
     background-color: var(--lime-hover);
   }
 
+  #add.alreadySaved
+  {
+    color: var(--lightgrey);
+    background-color: var(--hotpink);
+  }
+
+  #add.alreadySaved:hover
+  {
+    background-color: var(--hotpink-hover);
+  }
+
   #tags
   {
     width: 100%;

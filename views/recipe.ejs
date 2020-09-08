@@ -14,16 +14,34 @@
 
         <div id="leftWrapper" class="sidewrapper">
           <div id="stickyLeft">
-            <div id="add">+</div>
-            <img src="public/img/oatmeal.jpg" alt="">
+            <%
+              if(alreadySaved == true)
+              {
+                %>
+                <div id="add" class="alreadySaved">-</div>
+                <%
+              }
+              else
+              {
+                %>
+                <div id="add">+</div>
+                <%
+              }
+            %>
+            <img src="<%=imgURL%>" alt="">
             <div id="underImgDescription">
-              <h1>Apple Cinnamon Oatmeal</h1>
+              <h1><%= name%></h1>
               <div id="tags">
-                <div class="tag">360kcal</div>
-                <div class="tag">Sweet</div>
-                <div class="tag">Fruit</div>
-                <div class="tag">Vege</div>
-                <div class="tag">Breakfast</div>
+                <div class="tag"><%=sumOfKcal%>kcal</div>
+                <%
+                  tastes.forEach((taste)=>{
+                    %>
+                    <div class="tag"><%=taste%></div>
+                    <%
+                  });
+                %>
+                <div class="tag"><%=meatvege%></div>
+                <div class="tag"><%=meal%></div>
               </div>
             </div>
           </div>
@@ -33,72 +51,43 @@
 
           <div id="ingredients">
 
-            <div class="row">
-              <div class="ingredient">
-                120g of 3,2% Milk
-              </div>
+            <%
+              ingredients.forEach((ingredient)=>{
 
-              <div class="kcal">
-                100 kcal
-              </div>
-            </div>
+                %>
+                <div class="row">
+                  <%=ingredient.amount%> of <%=ingredient.name%>
 
-            <div class="row">
-              50g of Rolled Oats
+                  <div class="kcal">
+                    <%=ingredient.kcal%> kcal
+                  </div>
+                </div>
+                <%
 
-              <div class="kcal">
-                100 kcal
-              </div>
-            </div>
-
-            <div class="row">
-              5g of White Chocolate (1 cube)
-
-              <div class="kcal">
-                25 kcal
-              </div>
-            </div>
-
-            <div class="row">
-              1 Apple (~180g)
-
-              <div class="kcal">
-                80 kcal
-              </div>
-            </div>
-
-            <div class="row">
-              Cinnamon
-
-              <div class="kcal">
-                0 kcal
-              </div>
-            </div>
+              });
+            %>
 
           </div>
 
           <div id="instruction">
             <h2>How to make it?</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra dui eu semper mattis. Mauris vitae eros quis nisl facilisis fermentum luctus eget risus. Praesent quis dui nec est pulvinar rhoncus. Curabitur sagittis condimentum velit, ut aliquet arcu suscipit ut. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec consectetur id diam at tristique. Curabitur eget pulvinar nibh, in dapibus nisl.
-
-              Praesent dignissim orci lectus, eu aliquam justo consectetur nec. Phasellus quis ultricies est. Cras id sagittis augue. Praesent mi libero, porta eget fringilla non, lacinia quis augue. Pellentesque ex orci, posuere a pellentesque sit amet, euismod fringilla arcu. Cras sed lacus nec ipsum vestibulum mattis. Vestibulum et bibendum magna. Curabitur augue orci, sodales eget urna id, sodales tincidunt lacus. Proin metus libero, consectetur eget justo sit amet, consequat vulputate tortor. Curabitur felis turpis, pretium id dictum eu, laoreet eu turpis. Sed condimentum tortor vestibulum elementum fringilla. Sed scelerisque lacinia lectus, a fringilla tortor lacinia a. Cras ac tellus vel erat dapibus consectetur. Phasellus sagittis justo leo, in scelerisque sem posuere a. Vivamus est lorem, blandit eget lobortis at, fermentum id dolor. Duis lobortis efficitur fermentum.
-
-              Integer tincidunt at dolor eget commodo. Aliquam erat volutpat. Vivamus porta diam at consequat imperdiet. Vivamus faucibus lectus vel quam posuere, vitae luctus magna fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut et turpis convallis, fermentum ante eget, tristique libero. Etiam quis turpis et massa semper mollis. Nullam accumsan placerat purus, in facilisis lectus porttitor quis. Suspendisse potenti.
-
-              Sed hendrerit rhoncus malesuada. Nullam nulla massa, vehicula nec diam quis, ullamcorper posuere leo. Quisque at elit ultrices, elementum tellus eu, laoreet magna. In commodo lectus non felis congue, eu aliquam dolor vehicula. Sed varius, dolor ut volutpat rutrum, diam metus ornare lorem, vel ultricies tellus purus nec urna. Ut a tristique lorem. Etiam purus quam, molestie id feugiat et, mollis in ex. Vivamus bibendum varius neque vel ultrices. Proin rutrum dictum elit malesuada venenatis.
+              <%=
+                howToPrepare.replace('\n', '<br>')
+              %>
             </p>
           </div>
 
           <div id="authorFooter">
             <div>Brought to you by: </div>
-            <a href="">Ahiru</a>
+            <a href=""><%=author%></a>
           </div>
 
         </div>
 
       </div>
-
+      <div id="recipeId" style="display:none"><%= _id%></div>
     </main>
+    <script type="text/javascript" src="/public/scripts/recipes/saveRecipe.js"></script>
   </body>
 </html>

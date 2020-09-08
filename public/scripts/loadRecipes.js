@@ -25,7 +25,7 @@ const generateATags = (docs, clearFirst) => {
     //set up all the created elements
 
       //urls
-    a.href = `/recipe/${doc._id}`;
+    a.href = `/recipes/recipe/${doc._id}`;
 
     img.src = doc.imgURL;
 

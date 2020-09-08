@@ -1,19 +1,87 @@
 const session = require('express-session');
 const Recipe = require('../models/recipeModel.js');
+const User = require('../models/userModel.js');
 
 
 const index = (req, res) => {
 
   let sess = req.session;
 
-  if(sess.login)
+  //get the recipe's id
+  let id = req.params.id;
+
+  //find the recipe
+  Recipe.findById(id).then((doc)=>{
+
+    doc.alreadySaved = false;
+
+    if(sess.login)
+    {
+      User.findOne({name:sess.login}).then(user=>{
+        if(user.savedRecipes.indexOf(id)>=0)
+        {
+          doc.alreadySaved = true;
+        }
+        res.render('recipe', doc);
+      });
+    }
+    else
+    {
+      res.render('recipe', doc);
+    }
+  });
+
+};
+
+const save = (req, res) => {
+
+  let sess = req.session;
+
+  //get the recipe's id and action (+/-)
+  let id = req.params.id;
+  let action = req.params.action;
+
+  //if the user is not logged in, send info about redirect needed for him to log in first
+  if(!sess.login)
   {
-    res.render('add');
+    res.json({redirect: 'yes'})
   }
+  //if the user is logged in
   else
   {
-    res.redirect('/account');
+    //check if the recipe is already saved
+    User.findOne({name: sess.login}).then(doc=>{
+      //it's already saved
+      if(doc.savedRecipes.indexOf(id)>=0)
+      {
+        if(action=='+')
+        {
+          res.json({alreadySaved:'yes'});
+        }
+        else if(action=='-')
+        {
+          let index = doc.savedRecipes.indexOf(id);
+          let arrPart1 = doc.savedRecipes.slice(0, index);
+          let arrPart2 = doc.savedRecipes.slice(index+1, doc.savedRecipes.length);
+          let arr = arrPart1.concat(arrPart2);
+
+          doc.savedRecipes = arr;
+          doc.save();
+          res.json({deleted:'yes'});
+        }
+      }
+      //it's not saved yet
+      else
+      {
+        doc.savedRecipes.push(id);
+        doc.save().then(blob=>{
+          res.json({saved:'yes'});
+        });
+      }
+    });
   }
+
+
 
 };
 
@@ -120,5 +188,6 @@ const load = async (req, res) => {
 
 module.exports = {
   index,
-  load
+  load,
+  save
 };

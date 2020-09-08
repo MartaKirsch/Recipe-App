@@ -3,7 +3,9 @@ const recipesController = require('../controllers/recipesController.js');
 
 const router = express.Router();
 
-// router.get('/', recipesController.index);
+router.get('/recipe/:id', recipesController.index);
+
+router.get('/save/:id/:action', recipesController.save);
 
 router.post('/load/:num', recipesController.load)
 
