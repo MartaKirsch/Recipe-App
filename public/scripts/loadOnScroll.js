@@ -1,4 +1,11 @@
 const onScroll = (e) => {
+  //prepare if it's an account view search
+  let added = '';
+  let option = document.querySelector('.clicked');
+  if(option)
+  {
+    added = option.innerHTML;
+  }
 
   //get the document height
   var docHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;
@@ -8,7 +15,7 @@ const onScroll = (e) => {
   {
     //change the cursor so the user knows sth is being loaded
     document.body.cursor = 'wait';
-    loadRecipes().then(()=>{
+    loadRecipes({added:added}).then(()=>{
       document.body.cursor = 'default';
     });
   }

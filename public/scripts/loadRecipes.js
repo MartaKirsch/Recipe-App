@@ -6,7 +6,6 @@ const generateATags = (docs, clearFirst) => {
   }
 
   docs.forEach(doc=>{
-
     //create all the elements
     let a = document.createElement('a');
     let img = document.createElement('img');
@@ -89,7 +88,14 @@ const loadRecipes = async (e) => {
   const kcalmin = document.querySelector('input[name="kcalmin"]');
   const kcalmax = document.querySelector('input[name="kcalmax"]');
 
-  if(e)
+  let added = '';
+
+  //flag for the db query to search by author
+  if(e.added)
+  {
+    added = e.added;
+  }
+  else if(e.type == 'submit')
   {
     //prevent form's default behaviour
     e.preventDefault();
@@ -98,7 +104,11 @@ const loadRecipes = async (e) => {
   //get the num of already loaded recipes
   let atags = document.querySelectorAll('#recipes a');
   let num = atags.length;
-  if(e && e.target.id == 'filters')
+  if(e.type && e.target.id == 'filters')
+  {
+    num = 0;
+  }
+  else if(e.new)
   {
     num = 0;
   }
@@ -118,7 +128,8 @@ const loadRecipes = async (e) => {
         sortBy: sortBy.value,
         taste: taste.value,
         kcalmin: kcalmin.value,
-        kcalmax: kcalmax.value
+        kcalmax: kcalmax.value,
+        added: added
       })
     })
  .then(res=>res.json());
@@ -126,11 +137,19 @@ const loadRecipes = async (e) => {
   console.log(data);
 
   //generate the a tags of the recipesName
-  if(e && e.target.id == 'filters')
+  //if it comes from a form - delete previous content
+  if(e.type && e.target.id == 'filters')
   {
     generateATags(data, 1);
     window.scroll(0,0);
   }
+  //if it comes from the input change on the account view - delete previous content
+  else if(e.new)
+  {
+    generateATags(data, 1);
+    window.scroll(0,0);
+  }
+  //else - it comes from scrolling down the page so don't delete previous content
   else
   {
     generateATags(data, 0);

@@ -60,6 +60,11 @@ const load = async (req, res) => {
     }
   }
 
+  if(data.added == 'Added')
+  {
+    searchObj.author = sess.login;
+  }
+
   //sorting options
   let sortByOption = '';
   let ascDesc = 1;

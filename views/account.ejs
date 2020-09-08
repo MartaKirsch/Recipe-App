@@ -31,7 +31,16 @@
           </div>
 
           <div class="filter search">
-            <input autocomplete="off" type="search" name="search" id="searchRecipes" placeholder="You can type in a name of the recipe you look for">
+            <input autocomplete="off" type="search" name="search" id="searchRecipes" placeholder="You can type in a name of the recipe">
+            <select class="" id="sortBy" name="sortBy">
+              <option value="none">Sort By</option>
+              <option value="rateUp">Rate	&#9650 </option>
+              <option value="rateDown">Rate	&#9660 </option>
+              <option value="kcalUp">Kcal &#9650 </option>
+              <option value="kcalDown">Kcal &#9660 </option>
+              <option value="dateUp">Date &#9650 </option>
+              <option value="dateDown">Date &#9660 </option>
+            </select>
           </div>
 
           <div id="filters">
@@ -44,7 +53,7 @@
                 <option value="brunch">Brunch</option>
                 <option value="dinner">Dinner</option>
                 <option value="lunch">Lunch</option>
-                <option value="supper">supper</option>
+                <option value="supper">Supper</option>
               </select>
             </div>
 
@@ -62,8 +71,8 @@
             </div>
 
             <div class="filter">
-              <label for="meat">Meat/Vege</label>
-              <select class="" name="meat">
+              <label for="meatvege">Meat/Vege</label>
+              <select class="" name="meatvege">
                 <option value="none">-</option>
                 <option value="meat">Meat</option>
                 <option value="vege">Vege</option>
@@ -148,5 +157,8 @@
       </div>
 
     </main>
+    <script type="text/javascript" src="/public/scripts/account/changeCollection.js"></script>
+    <script type="text/javascript" src="/public/scripts/loadRecipes.js"></script>
+    <script type="text/javascript" src="/public/scripts/loadOnScroll.js"></script>
   </body>
 </html>
