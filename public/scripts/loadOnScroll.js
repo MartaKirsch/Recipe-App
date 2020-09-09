@@ -14,9 +14,9 @@ const onScroll = (e) => {
   if(window.innerHeight + window.pageYOffset == docHeight)
   {
     //change the cursor so the user knows sth is being loaded
-    document.body.cursor = 'wait';
+    document.body.style.cursor = 'wait';
     loadRecipes({added:added}).then(()=>{
-      document.body.cursor = 'default';
+      document.body.style.cursor = 'default';
     });
   }
 }

@@ -5,13 +5,24 @@ const changeCollection = () => {
     {
       inputs.forEach((input) => {
 
+        let otherFlag = 'Saved';
+        if(button.innerHTML=='Saved')
+        {
+          otherFlag = 'Added';
+        }
+
         //add new event listeners
         input.addEventListener('change', ()=>{
-          loadRecipes({added:button.value, new:'yes'});
+          loadRecipes({added:button.innerHTML, new:'yes'});
+        });
+
+        input.removeEventListener('change', ()=>{
+          loadRecipes({added:otherFlag, new:'yes'});
         });
 
       });
 
+      loadRecipes({added:button.innerHTML, new:'yes'});
     }
   });
 

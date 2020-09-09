@@ -161,6 +161,14 @@ const loadRecipes = async (e) => {
 document.querySelector('#filters').addEventListener('submit', loadRecipes);
 
 window.onload = ()=>{
-  let event = new Event('submit');
-  document.querySelector('#filters').dispatchEvent(event);
+  if(document.querySelector('form#filters')!=null)
+  {
+    let event = new Event('submit');
+    document.querySelector('#filters').dispatchEvent(event);
+  }
+  else
+  {
+    loadRecipes({added:'Saved', new:'yes'});
+    changeCollection();
+  }
 };

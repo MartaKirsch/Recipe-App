@@ -92,47 +92,6 @@ const load = async (req, res) => {
   //get the data
   const data = req.body;
 
-  //search params
-  let searchObj = {};
-
-  if(data.name!='')
-  {
-    searchObj.name = new RegExp(data.name, "i");
-  }
-  if(data.meal!='none')
-  {
-    searchObj.meal = data.meal;
-  }
-  if(data.meatvege!='none')
-  {
-    searchObj.meatvege = data.meatvege;
-  }
-  if(data.taste!='none')
-  {
-    searchObj.tastes = data.taste;
-  }
-  if(data.kcalmin != "")
-  {
-    searchObj.sumOfKcal = {$gt: parseInt(data.kcalmin)};
-    if(data.kcalmax != "")
-    {
-      searchObj.sumOfKcal = {$gt: parseInt(data.kcalmin),$lt: parseInt(data.kcalmax)};
-    }
-  }
-  else if(data.kcalmax != "")
-  {
-    searchObj.sumOfKcal = {$lt: parseInt(data.kcalmax)};
-    if(data.kcalmin != "")
-    {
-      searchObj.sumOfKcal = {$gt: parseInt(data.kcalmin),$lt: parseInt(data.kcalmax)};
-    }
-  }
-
-  if(data.added == 'Added')
-  {
-    searchObj.author = sess.login;
-  }
-
   //sorting options
   let sortByOption = '';
   let ascDesc = 1;
@@ -167,24 +126,152 @@ const load = async (req, res) => {
     ascDesc = -1;
   }
 
-  //get the recipes
-  Recipe
-  .find(searchObj)
-  .skip(parseInt(req.params.num))
-  .limit(10)
-  .sort([[sortByOption , ascDesc]])
-  .then((docs)=>{
+  //searching for all or by the author
+  if(data.added == 'Added' || !data.added || data.added == "")
+  {
+    //search params
+    let searchObj = {};
 
-    //send the recipes to the frontend
-    res.json(docs);
+    if(data.name!='')
+    {
+      searchObj.name = new RegExp(data.name, "i");
+    }
+    if(data.meal!='none')
+    {
+      searchObj.meal = data.meal;
+    }
+    if(data.meatvege!='none')
+    {
+      searchObj.meatvege = data.meatvege;
+    }
+    if(data.taste!='none')
+    {
+      searchObj.tastes = data.taste;
+    }
+    if(data.kcalmin != "")
+    {
+      searchObj.sumOfKcal = {$gt: parseInt(data.kcalmin)};
+      if(data.kcalmax != "")
+      {
+        searchObj.sumOfKcal = {$gt: parseInt(data.kcalmin),$lt: parseInt(data.kcalmax)};
+      }
+    }
+    else if(data.kcalmax != "")
+    {
+      searchObj.sumOfKcal = {$lt: parseInt(data.kcalmax)};
+      if(data.kcalmin != "")
+      {
+        searchObj.sumOfKcal = {$gt: parseInt(data.kcalmin),$lt: parseInt(data.kcalmax)};
+      }
+    }
 
-  })
-  .catch(err=>console.log(err));
+    if(data.added == 'Added')
+    {
+      searchObj.author = sess.login;
+    }
+
+
+    //get the recipes
+    Recipe
+    .find(searchObj)
+    .skip(parseInt(req.params.num))
+    .limit(10)
+    .sort([[sortByOption , ascDesc]])
+    .then((docs)=>{
+
+      //send the recipes to the frontend
+      res.json(docs);
+
+    })
+    .catch(err=>console.log(err));
+  }
+
+  //searching for the saved ones by a user
+  else if(data.added == 'Saved')
+  {
+    User.findOne({name:sess.login}).then(user=>{
+
+      let docs = [];
+      let recipesArr = user.savedRecipes;
+
+      Promise.all([
+        Recipe.findOne({_id:recipesArr[0 + parseInt(req.params.num)]}),
+        Recipe.findOne({_id:recipesArr[1 + parseInt(req.params.num)]}),
+        Recipe.findOne({_id:recipesArr[2 + parseInt(req.params.num)]}),
+        Recipe.findOne({_id:recipesArr[3 + parseInt(req.params.num)]}),
+        Recipe.findOne({_id:recipesArr[4 + parseInt(req.params.num)]}),
+        Recipe.findOne({_id:recipesArr[5 + parseInt(req.params.num)]}),
+        Recipe.findOne({_id:recipesArr[6 + parseInt(req.params.num)]}),
+        Recipe.findOne({_id:recipesArr[7 + parseInt(req.params.num)]}),
+        Recipe.findOne({_id:recipesArr[8 + parseInt(req.params.num)]}),
+        Recipe.findOne({_id:recipesArr[9 + parseInt(req.params.num)]})
+      ])
+      .then((values) => {
+        let docs = [];
+
+        //get all of the recipes that aren't null
+        values.forEach(value=>{
+          if(value!=null)
+          {
+            docs.push(value);
+          }
+        });
+
+        //sort the docs
+        if(sortByOption=!'none')
+        {
+          if(ascDesc==1)
+          {
+            const sortingFun = (a, b) =>{
+              if(a[sortByOption] < b[sortByOption])
+              {
+                return -1;
+              }
+              else if(a[sortByOption] > b[sortByOption])
+              {
+                return 1;
+              }
+              else
+              {
+                return 0;
+              }
+            };
+            docs.sort(sortingFun);
+          }
+          else
+          {
+            const sortingFun = (a, b) =>{
+              if(a.sumOfKcal < b.sumOfKcal)
+              {
+                return 1;
+              }
+              else if(a.sumOfKcal > b.sumOfKcal)
+              {
+                return -1;
+              }
+              else
+              {
+                return 0;
+              }
+            };
+            docs.sort(sortingFun);
+          }
+
+        }
+
+        res.json(docs);
+      });
+
+    });
+  }
+
+
 
 
 
 
 };
+
 
 module.exports = {
   index,
