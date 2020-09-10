@@ -13,14 +13,10 @@ const saveRecipe = async ()=>{
   }
   else if(data.saved)
   {
-    console.log('your recipe has been saved');
-
     location.href=location.href;
   }
   else if(data.deleted)
   {
-    console.log('deleted the recipe');
-
     location.href=location.href;
   }
 

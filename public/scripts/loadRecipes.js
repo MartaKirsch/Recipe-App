@@ -168,7 +168,6 @@ window.onload = ()=>{
   }
   else
   {
-    loadRecipes({added:'Saved', new:'yes'});
     changeCollection();
   }
 };

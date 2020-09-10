@@ -5,6 +5,16 @@ const changeCollection = () => {
     {
       inputs.forEach((input) => {
 
+        //reset inputs' values
+        if(input.type == 'select-one')
+        {
+          input.selectedIndex = 0;
+        }
+        else
+        {
+          input.value = '';
+        }
+
         let otherFlag = 'Saved';
         if(button.innerHTML=='Saved')
         {
