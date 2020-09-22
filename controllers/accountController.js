@@ -8,7 +8,9 @@ const index = (req, res) => {
   //check if a user is logged in
   if(sess.login)
   {
-    res.render('account');
+    User.findOne({name: sess.login}).then(doc=>{
+      res.render('account', doc);
+    })
   }
 
   //if not, redirect to the log-in page

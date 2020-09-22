@@ -14,7 +14,7 @@
 
         <div id="leftWrapper" class="sidewrapper">
           <div id="stickyLeft">
-            <img src="public/img/cupcake.png" alt="">
+            <img src="/public/img/cupcake.png" alt="">
             <div id="underImgDescription">
               <h1>You can add your recipe here!</h1>
               <p>You will be able to store all your favourite recipes here! You can categorize them by taste (sweet/sour/bitter/other), by number of calories or by the meal you most often eat it for. Our website is going to allow you to search other users' recipes and save them in one place! Check it out yourself!</p>
@@ -24,13 +24,47 @@
 
         <div id="rightWrapper" class="sidewrapper">
 
-            <img id="recipeImg" src="public/img/img.png" alt="">
+            <%
+              let imgURL = 'public/img/img.png';
+              let name = '';
+              let meal = '';
+              let meatvege = '';
+              let ingredients = [];
+              let tastes = [];
+              let id = '';
+              let prepare = '';
 
-            <form action="/add/addRecipe" method="post" id="addRecipeForm">
-              <input type="text" autocomplete="off" name="imgurl" placeholder="Paste the image url here (optional)">
+              if(update)
+              {
+                imgURL = data.imgURL;
+                name = data.name;
+                meal = data.meal;
+                meatvege = data.meatvege;
+                ingredients = data.ingredients;
+                tastes = data.tastes;
+                id = data._id;
+                prepare = data.howToPrepare;
+
+                let newData = JSON.stringify({
+                  meal: data.meal,
+                  meatvege: data.meatvege,
+                  ingredients: data.ingredients,
+                  tastes: data.tastes,
+                  prepare: data.howToPrepare
+                });
+                %>
+                <div id="dataDiv" style="display:none"><%=newData%></div>
+                <%
+              }
+            %>
+
+            <img id="recipeImg" src="<%=imgURL%>" alt="">
+
+            <form action="/add/addRecipe<%if(update){%>/update/<%=id%><%}%>" method="post" id="addRecipeForm">
+              <input type="text" value="<%if(update){%><%=imgURL%><%}%>" autocomplete="off" name="imgurl" placeholder="Paste the image url here (optional)">
 
               <label for="name">Your recipe name: </label>
-              <input type="text" autocomplete="off" name="name" value="" placeholder="Enter the name of your recipe">
+              <input type="text" autocomplete="off" name="name" value="<%=name%>" placeholder="Enter the name of your recipe">
 
               <label for="meal">Meal you most often eat it for: </label>
               <select class="" name="meal" data-num="2">
@@ -87,9 +121,11 @@
                 </select>
               </div>
 
-              <textarea name="prepare" rows="8" cols="80" placeholder="Desribe how to prepare your recipe here"></textarea>
+              <textarea name="prepare" rows="8" cols="80" placeholder="Desribe how to prepare your recipe here"><%=prepare%></textarea>
 
-              <input id="addRecipe" type="button" value="Add Recipe!">
+              <input type="text" style="display:none" id="recipeId" value="<%=id%>">
+
+              <input id="addRecipe" type="button" value="<%if(update){%>Update!<%} else {%>Add Recipe!<%}%>">
             </form>
         </div>
 
@@ -101,5 +137,11 @@
     <script type="text/javascript" src="/public/scripts/add/addIngredients.js"></script>
     <script type="text/javascript" src="/public/scripts/add/checkInputs.js"></script>
     <script type="text/javascript" src="/public/scripts/add/checkForm.js"></script>
+    <%if(update)
+    {
+      %>
+      <script type="text/javascript" src="/public/scripts/add/updateData.js"></script>
+      <%
+    }%>
   </body>
 </html>

@@ -104,7 +104,7 @@
     border: none;
   }
 
-  input[type="submit"]
+  input[type="submit"], input[type="button"]
   {
     color: var(--lightgrey);
     background-color: var(--darkergrey);
@@ -117,15 +117,10 @@
     margin: 2vw auto 0;
   }
 
-  input[type="submit"]:hover, input[type="submit"]:focus
+  input[type="submit"]:hover, input[type="submit"]:focus, input[type="button"]:hover, input[type="button"]:focus
   {
     outline: none;
     background-color: var(--darkgrey);
-  }
-
-  #recipes
-  {
-
   }
 
   #recipes a

@@ -56,6 +56,38 @@
     background-color: var(--hotpink-hover);
   }
 
+  #actions
+  {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2vw;
+  }
+
+  .option
+  {
+    cursor: pointer;
+    border-radius: 15px;
+    max-width: 45%;
+    padding: .6vw;
+    font-size:1.25vw;
+    background-color: var(--lime);
+  }
+
+  .option:hover
+  {
+    background-color: var(--lime-hover);
+  }
+
+  #delete
+  {
+    color:white;
+    background-color: var(--hotpink);
+  }
+  #delete:hover
+  {
+    background-color: var(--hotpink-hover);
+  }
+
   #tags
   {
     width: 100%;

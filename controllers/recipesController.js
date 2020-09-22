@@ -13,6 +13,8 @@ const index = (req, res) => {
   //find the recipe
   Recipe.findById(id).then((doc)=>{
 
+    doc.permissions = false;
+    
     doc.alreadySaved = false;
 
     if(sess.login)
@@ -25,6 +27,11 @@ const index = (req, res) => {
         {
           doc.alreadySaved = true;
         }
+        if(doc.author == sess.login)
+        {
+          doc.permissions = true;
+        }
+
         res.render('recipe', doc);
       });
     }
@@ -167,11 +174,15 @@ const load = async (req, res) => {
   }
 
   //searching for all or by the author
-  if(data.added == 'Added' || !data.added || data.added == "")
+  if(data.added == 'Added' || data.added == 'searchByAuthor'|| !data.added || data.added == "")
   {
     if(data.added == 'Added')
     {
       searchObj.author = sess.login;
+    }
+    else if(data.added == 'searchByAuthor')
+    {
+      searchObj.author = data.author;
     }
 
 

@@ -7,6 +7,14 @@ const index = (req, res) => {
 
 };
 
+
+const indexByAuthor = (req, res) => {
+
+  res.render('searchAuthor');
+
+};
+
 module.exports = {
-  index
+  index,
+  indexByAuthor
 };

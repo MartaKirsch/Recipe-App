@@ -90,6 +90,9 @@ const rowCheck = (e) => {
   if(nameReg.test(ingredients[index].value) && amountReg.test(amounts[index].value) && kcalReg.test(kcals[index].value))
   {
     ingredientsFlags[index] = 1;
+    ingredients[index].classList.remove('wrongInput');
+    amounts[index].classList.remove('wrongInput');
+    kcals[index].classList.remove('wrongInput');
   }
   else
   {

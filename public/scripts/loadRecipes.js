@@ -113,6 +113,15 @@ const loadRecipes = async (e) => {
     num = 0;
   }
 
+  //search by author
+  let author = '';
+  if(e.added == 'searchByAuthor')
+  {
+    let reg = /\/\w+$/;
+    author = location.href.match(reg)[0];
+    author = author.slice(1, author.length);
+  }
+
   //fetch new recipes
   let data = await fetch(`/recipes/load/${num}`,
     {
@@ -129,7 +138,8 @@ const loadRecipes = async (e) => {
         taste: taste.value,
         kcalmin: kcalmin.value,
         kcalmax: kcalmax.value,
-        added: added
+        added: added,
+        author: author
       })
     })
  .then(res=>res.json());

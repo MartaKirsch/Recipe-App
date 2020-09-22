@@ -29,6 +29,15 @@
               }
             %>
             <img src="<%=imgURL%>" alt="">
+            <%
+              if(permissions)
+              {
+                %><div id="actions">
+                  <a href="/add/<%=_id%>" id="update" class="option">Update</a>
+                  <div id="delete" class="option">Delete</div>
+                </div><%
+              }
+            %>
             <div id="underImgDescription">
               <h1><%= name%></h1>
               <div id="tags">
@@ -72,15 +81,15 @@
           <div id="instruction">
             <h2>How to make it?</h2>
             <p>
-              <%=
-                howToPrepare.replace('\n', '<br>')
+              <%-
+                howToPrepare.replace(/(?:\r\n|\r|\n)/g, '<br>');
               %>
             </p>
           </div>
 
           <div id="authorFooter">
             <div>Brought to you by: </div>
-            <a href=""><%=author%></a>
+            <a href="/search/<%=author%>"><%=author%></a>
           </div>
 
         </div>
