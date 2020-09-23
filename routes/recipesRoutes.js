@@ -9,6 +9,10 @@ router.get('/save/:id/:action', recipesController.save);
 
 router.get('/delete/:id', recipesController.deleteRecipe);
 
-router.post('/load/:num', recipesController.load)
+router.get('/rate/:rate/:id', recipesController.rateRecipe);
+
+router.get('/checkLogIn', recipesController.checkLogIn);
+
+router.post('/load/:num', recipesController.load);
 
 module.exports = router;

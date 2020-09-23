@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="/public/recipe/style.css" type="text/css">
     <link rel="stylesheet" href="/public/nav/style.css" type="text/css">
-    <title></title>
+    <title><%= name%></title>
   </head>
   <body>
     <%- include('./partials/nav.ejs') %>
@@ -87,6 +87,42 @@
             </p>
           </div>
 
+          <div id="rateWrapper">
+            <div class="rateCol">
+              <%
+                let average = 0
+                if(rates.average)
+                {
+                  average = rates.average;
+                  average*=100;
+                  average = Math.round(average);
+                  average /=100;
+                }
+
+              %>
+              <%=average%>/5
+              <img src="/public/img/star.png" alt="">
+            </div>
+            <div class="rateCol">
+              <select name="rate" id="">
+                <%
+                let index = rates.author.indexOf(user);
+                  if(index>=0)
+                  {
+                    %><option value="<%=rates.rate[index]%>"><%=rates.rate[index]%></option><%
+                  }
+                %>
+                <option value="none">-</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <button id="rateButton">Rate Me!</button>
+            </div>
+          </div>
+
           <div id="authorFooter">
             <div>Brought to you by: </div>
             <a href="/search/<%=author%>"><%=author%></a>
@@ -99,5 +135,6 @@
     </main>
     <script type="text/javascript" src="/public/scripts/recipes/saveRecipe.js"></script>
     <script type="text/javascript" src="/public/scripts/recipes/deleteRecipe.js"></script>
+    <script type="text/javascript" src="/public/scripts/recipes/rateRecipe.js"></script>
   </body>
 </html>

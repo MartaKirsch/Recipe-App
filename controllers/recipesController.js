@@ -17,6 +17,12 @@ const index = (req, res) => {
 
     doc.alreadySaved = false;
 
+    doc.user = 'none';
+    if(sess.login)
+    {
+      doc.user = sess.login;
+    }
+
     if(sess.login)
     {
       User.findOne({name:sess.login}).then(user=>{
@@ -403,10 +409,76 @@ const deleteRecipe = (req, res) => {
 
 };
 
+const rateRecipe = (req, res) => {
+
+  let sess = req.session;
+  let id = req.params.id;
+  let rate = parseInt(req.params.rate);
+
+  Recipe.findOne({_id: id}).then((doc)=>{
+
+    const index = doc.rates.author.indexOf(sess.login);
+
+    //check if this user already rated this recipe
+    if(index>=0)
+    {
+      let arr = doc.rates.rate;
+      arr[index] = rate;
+      doc.rates.rate = arr;
+    }
+    //first rate
+    else
+    {
+      doc.rates.rate.push(rate);
+      doc.rates.author.push(sess.login);
+    }
+
+    //update the average rate
+    let sum = 0;
+
+    doc.rates.rate.forEach((num) => {
+      sum+=num;
+    });
+
+    let average = (sum)/(doc.rates.rate.length);
+
+    doc.rates.average = average;
+
+    // res.json({isOK: true, arr:doc});
+    // doc.save().then((blob)=>{
+    //   res.json({isOK: true, blob});
+    // });
+
+    Recipe.findOneAndUpdate({_id:id}, doc, (err, recipe) => {
+      res.json({isOK: true});
+    });
+
+  });
+
+
+};
+
+const checkLogIn = (req, res) => {
+
+  let sess = req.session;
+
+  if(sess.login)
+  {
+    res.json({redirect:false});
+  }
+  else
+  {
+    res.json({redirect:true});
+  }
+
+};
+
 
 module.exports = {
   index,
   load,
   save,
-  deleteRecipe
+  deleteRecipe,
+  rateRecipe,
+  checkLogIn
 };
