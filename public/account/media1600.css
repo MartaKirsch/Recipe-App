@@ -1,12 +1,5 @@
 @media (min-width:1600px){
 
-  #stickyLeft
-  {
-    position: sticky;
-    position: -webkit-sticky;
-    top:7.6vw;
-  }
-
   #logout
   {
     cursor: pointer;

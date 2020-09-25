@@ -1,5 +1,32 @@
 @media (min-width:1600px){
 
+  #stickyLeft::-webkit-scrollbar
+  {
+    width: .8vw;
+    background-color: var(--darkergrey);
+  }
+
+  #stickyLeft::-webkit-scrollbar-thumb
+  {
+    background-color: var(--darkgrey);
+  }
+
+  #stickyLeft::-webkit-scrollbar-track
+  {
+    box-shadow: none;
+  }
+
+  #stickyLeft
+  {
+    /* align-self: flex-end; */
+    /* scrollbar-width: 1vw;
+    scrollbar-color: #7D8D9C #adeec2; */
+    overflow-y: auto;
+    position: sticky;
+    position: -webkit-sticky;
+    top:7.6vw;
+    /* bottom: 0; */
+  }
 
   #wrapper
   {

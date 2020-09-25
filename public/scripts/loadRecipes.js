@@ -167,14 +167,23 @@ const loadRecipes = async (e) => {
 
 };
 
-//add event listener
+//add event listeners (button and inputs)
 document.querySelector('#filters').addEventListener('submit', loadRecipes);
+const formInputs = document.querySelectorAll('#leftWrapper input,#leftWrapper select');
+formInputs.forEach((input) => {
+  input.addEventListener('change', ()=>{
+    let event = new Event('submit');
+    document.querySelector('#filters').dispatchEvent(event);
+  });
+});
 
 window.onload = ()=>{
   if(document.querySelector('form#filters')!=null)
   {
     let event = new Event('submit');
     document.querySelector('#filters').dispatchEvent(event);
+    let evt = new Event('resize');
+    window.dispatchEvent(evt);
   }
   else
   {

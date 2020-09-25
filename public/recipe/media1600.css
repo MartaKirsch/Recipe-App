@@ -1,12 +1,5 @@
 @media (min-width:1600px){
 
-  #stickyLeft
-  {
-    position: sticky;
-    position: -webkit-sticky;
-    top:7.6vw;
-  }
-
   #stickyLeft img
   {
     box-shadow: none;
@@ -37,6 +30,7 @@
     font-size: 1.3vw;
     position: absolute;
     top:0;
+    left: 0;
     /* right: 0; */
   }
 

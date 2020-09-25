@@ -6,15 +6,6 @@
     margin: 0;
   }
 
-  #stickyLeft
-  {
-    /* align-self: flex-end; */
-    position: sticky;
-    position: -webkit-sticky;
-    top:7.6vw;
-    /* bottom: 0; */
-  }
-
   #leftWrapper
   {
     /* flex-direction: row; */
@@ -44,6 +35,7 @@
     border-bottom: 1px solid var(--lightgrey);
     border-radius: 20px;
     margin: 0 0 2vw 0;
+    font-size: 1vw;
   }
 
   .filter:hover
@@ -91,6 +83,7 @@
     border: none;
     margin: 0 auto 0;
     width: 100%;
+    flex-wrap: nowrap;
   }
 
   .search:hover
@@ -98,10 +91,23 @@
     background-color: var(--darkgrey);
   }
 
-  .search input
+  .search input[type="search"]
   {
+    width: 70%;
     height: 3vw;
     border: none;
+  }
+
+  .search select
+  {
+    height: 3vw;
+  }
+
+  .filter select
+  {
+    width: 20%;
+    margin: 0;
+    width: auto;
   }
 
   input[type="submit"], input[type="button"]

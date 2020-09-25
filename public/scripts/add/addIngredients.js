@@ -59,17 +59,17 @@ const addIngredients = ()=>{
   ingredientInput.type = 'text';
   ingredientInput.autocomplete = 'off';
   ingredientInput.name = 'ingredients[]';
-  ingredientInput.placeholder = 'Enter the ingredient';
+  ingredientInput.placeholder = 'Ingredient';
 
   amountInput.type = 'text';
   amountInput.autocomplete = 'off';
   amountInput.name = 'amount[]';
-  amountInput.placeholder = 'Enter the amount';
+  amountInput.placeholder = 'Amount';
 
   kcalInput.type = 'text';
   kcalInput.autocomplete = 'off';
   kcalInput.name = 'kcal[]';
-  kcalInput.placeholder = 'Enter its kcal';
+  kcalInput.placeholder = 'Kcal';
 
 
   //put inputs in the row

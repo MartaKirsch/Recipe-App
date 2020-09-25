@@ -1,3 +1,271 @@
 @media (min-width:1200px){
-  
+  #stickyLeft img
+  {
+    width: 21vw;
+    box-shadow: none;
+    border-radius: 15px;
+  }
+
+  #leftWrapper
+  {
+    padding: 1vw 1vw 0;
+  }
+
+  #rightWrapper
+  {
+    justify-content: flex-start;
+  }
+
+  #add
+  {
+    cursor: pointer;
+    color: var(--darkergrey);
+    background-color: var(--lime);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    height: 3vw;
+    width: 3vw;
+    font-size: 1.8vw;
+    position: absolute;
+    top:0;
+    /* left: 2vw; */
+    border: 2px solid var(--darkestgrey);
+    /* right: 0; */
+  }
+
+  #add:hover
+  {
+    background-color: var(--lime-hover);
+  }
+
+  #add.alreadySaved
+  {
+    color: var(--lightgrey);
+    background-color: var(--hotpink);
+  }
+
+  #add.alreadySaved:hover
+  {
+    background-color: var(--hotpink-hover);
+  }
+
+  #actions
+  {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3vw;
+  }
+
+  .option
+  {
+    cursor: pointer;
+    border-radius: 15px;
+    max-width: 45%;
+    padding: 1vw;
+    font-size:1.75vw;
+    background-color: var(--lime);
+  }
+
+  .option:hover
+  {
+    background-color: var(--lime-hover);
+  }
+
+  #delete
+  {
+    color:white;
+    background-color: var(--hotpink);
+  }
+  #delete:hover
+  {
+    background-color: var(--hotpink-hover);
+  }
+
+  #tags
+  {
+    width: 100%;
+    padding: 2vw 2vw 0;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag
+  {
+    padding: .6vw;
+    font-size:1.5vw;
+    margin: 0 1vw 1.5vw;
+    background-color: var(--lightgrey);
+    color: var(--darkergrey);
+    border-radius: 15px;
+    border-bottom: 2px solid var(--lime);
+  }
+
+  #ingredients
+  {
+    font-family: 'Indie Flower', cursive;
+  }
+
+  .row
+  {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--lightgrey);
+    font-size: 2vw;
+    padding: 1.5vw;
+    /* border-bottom: 1px solid var(--lightgrey); */
+  }
+
+  .kcal
+  {
+    margin-left: auto;
+  }
+
+  #instruction h2
+  {
+    font-size:1.9vw;
+    color: var(--lightgrey);
+    text-decoration: underline;
+    text-decoration-color: var(--lime);
+  }
+
+  #authorFooter
+  {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  #authorFooter div
+  {
+    font-size: 2vw;
+    color: var(--lightgrey);
+    margin-right: 1.5vw;
+  }
+
+  #authorFooter a
+  {
+    font-size: 3vw;
+    font-family: 'Indie Flower', cursive;
+    color: var(--lime);
+  }
+
+  #authorFooter a:focus, #authorFooter a:hover
+  {
+    outline: none;
+    color: var(--lime-hover);
+    text-decoration: underline;
+  }
+
+  #delOpts
+  {
+    color: var(--lightgrey);
+    padding: 1.5vw;
+    font-size: 2vw;
+    border-radius: 15px;
+    border: 2px solid var(--lightgrey);
+  }
+
+  #delButtons
+  {
+    display: flex;
+    justify-content: center;
+  }
+
+  .delOpt, a.delOpt
+  {
+    background-color: var(--hotpink);
+    padding: 1vw;
+    border-radius: 15px;
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    margin: 1vw 2vw 0;
+    cursor: pointer;
+  }
+
+  a.delOpt
+  {
+    background-color: var(--lime);
+    color: var(--darkgrey);
+  }
+
+  a.delOpt:hover, a.delOpt:focus,a.option:hover, a.option:focus
+  {
+    border: none;
+    outline: none;
+    background-color: var(--lime-hover);
+  }
+
+  .delOpt:hover
+  {
+    background-color: var(--hotpink-hover);
+  }
+
+  #rateWrapper
+  {
+    margin: 2vw 0;
+    display: flex;
+    justify-content: flex-start;
+    color: var(--lightgrey);
+    font-size: 1.7vw;
+  }
+
+  .rateCol
+  {
+    /* width: 25%; */
+    padding: 0 2vw ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rateCol img
+  {
+    margin-left: .5vw;
+    width: 3vw;
+    height: auto;
+  }
+
+  .rateCol select
+  {
+    border:none;
+    font-size: 1.5vw;
+    padding: .6vw 1vw;
+    margin-right: 1.5vw;
+    cursor: pointer;
+    background-color: var(--lightgrey);
+    color: var(--darkergrey);
+    border-radius: 15px;
+    border-bottom: 2px solid var(--lime);
+    outline: none;
+  }
+
+  .rateCol button
+  {
+    border:none;
+    font-size: 1.4vw;
+    padding: .7vw 1vw;
+    cursor: pointer;
+    background-color: var(--lightgrey);
+    color: var(--darkergrey);
+    border-radius: 15px;
+    border-bottom: 2px solid var(--lime);
+    outline: none;
+  }
+
+  .rateCol select:focus, .rateCol select:hover
+  {
+    background-color: var(--mediumgrey);
+    border-bottom: 2px solid var(--hotpink);
+  }
+
+  .rateCol button:focus,.rateCol button:hover
+  {
+    background-color: var(--mediumgrey);
+    border-bottom: 2px solid var(--hotpink);
+  }
 }
