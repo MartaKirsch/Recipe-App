@@ -38,6 +38,14 @@ const deleteIngredients = (e)=>{
 
   updateGlobalVars();
 
+  const del = document.querySelectorAll('.deleteIngredient');
+  //update the dataset-num
+  for(let i=0; i<ingredientsFlags.length;i++)
+  {
+    del[i].dataset.num = i;
+  }
+
+
 };
 
 const addIngredients = ()=>{
