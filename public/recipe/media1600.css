@@ -30,12 +30,12 @@
     align-items: center;
     justify-content: center;
     border-radius: 15px;
-    height: 2vw;
-    width: 2vw;
+    height: 2.5vw;
+    width: 2.5vw;
     font-size: 1.3vw;
     position: absolute;
-    top:0;
-    left: 0;
+    top:7.5vw;
+    left: 2vw;
     /* right: 0; */
   }
 
@@ -57,6 +57,7 @@
 
   #actions
   {
+    width: 70%;
     display: flex;
     justify-content: space-around;
     margin-bottom: 2vw;

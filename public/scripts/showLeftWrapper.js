@@ -4,11 +4,15 @@ const showLeftWrapper = () => {
   const leftWrapper = document.querySelector('#leftWrapper');
   const sidebar = document.querySelector('#sidebar');
 
-  //make it visible
-  leftWrapper.style.display = 'block';
-
-  //hide the sidebar
-  // sidebar.style.display = 'none';
+  //make it visible or invisible
+  if(leftWrapper.style.display == 'block')
+  {
+    leftWrapper.style.display = 'none';
+  }
+  else
+  {
+    leftWrapper.style.display = 'block';
+  }
 
 
 };

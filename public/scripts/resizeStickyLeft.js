@@ -30,6 +30,17 @@ const resize = (e) => {
     first = true;
   }
 
+  //if the delete recipe options are shown, close them
+  if(document.querySelector('#delOpts') && document.body.offsetWidth<=1183)
+  {
+    document.querySelector('#wrapper').removeChild(document.querySelector('#delOpts'));
+  }
+  else if(document.querySelector('#delOpts'))
+  {
+    document.querySelector('#stickyLeft').removeChild(document.querySelector('#delOpts'));
+  }
+
+
 };
 
 //is it first occurance of the 'scroll' event?
