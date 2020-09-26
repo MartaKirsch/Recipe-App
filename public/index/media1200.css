@@ -6,6 +6,11 @@
     height: 100%;
   }
 
+  #wrapper.main
+  {
+    justify-content: center;
+  }
+
   .sidewrapper
   {
     flex-direction: column;
@@ -17,10 +22,21 @@
 
   #leftWrapper
   {
+    width: auto;
+    position: sticky;
+    border: none;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     flex:1 1 30%;
     justify-content: flex-start;
+    display: block;
+    background-color: transparent;
+    left: 0;
+  }
+
+  #leftWrapper.main
+  {
+    max-width: 40%;
   }
 
   #stickyLeft::-webkit-scrollbar
@@ -41,9 +57,9 @@
 
   #stickyLeft
   {
-    /* align-self: flex-end; */
-    /* scrollbar-width: 1vw;
-    scrollbar-color: #7D8D9C #adeec2; */
+    padding: 0;
+    border:none;
+    background-color: transparent;
     padding-right: 2vw;
     overflow-y: auto;
     position: sticky;
@@ -52,8 +68,14 @@
     /* bottom: 0; */
   }
 
-  #rightWrapper
+  #sidebar
   {
+    display: none;
+  }
+
+  #rightWrapper, #rightWrapper.logIn
+  {
+    display: block;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     flex: 1 1 70%;

@@ -58,4 +58,7 @@ const deleteRecipe = () => {
 
 };
 
-document.querySelector('#delete').addEventListener('click', deleteRecipe);
+if(document.querySelector('#delete'))
+{
+  document.querySelector('#delete').addEventListener('click', deleteRecipe);
+}

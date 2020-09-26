@@ -1,4 +1,31 @@
 @media (min-width:992px){
+  nav
+  {
+    position: sticky;
+    top:0;
+    z-index: 1000;
+  }
 
-  
+  #navbar
+  {
+    color:var(--lightgrey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darkgrey);
+    border-bottom: 2px solid var(--lightgrey);
+  }
+
+  #navbar a
+  {
+    padding: 1.3vw 2.6vw;
+    font-size: 2.3vw;
+  }
+
+  #navbar a:hover, #navbar a:focus
+  {
+    outline:none;
+    background-color: #3d3d3d;
+  }
+
 }

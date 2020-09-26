@@ -4,15 +4,35 @@
     width: 21vw;
     box-shadow: none;
     border-radius: 15px;
+    margin: 0 0 2vw;
   }
 
-  #leftWrapper
+  #stickyLeft h1
+  {
+    font-size: 2.5vw;
+  }
+
+  #stickyLeft.logIn
+  {
+    width: auto;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  #wrapper
+  {
+    flex-direction: row;
+  }
+
+  #leftWrapper.logIn
   {
     padding: 1vw 1vw 0;
   }
 
-  #rightWrapper
+  #rightWrapper.logIn
   {
+    margin: 0;
+    width: auto;
     justify-content: flex-start;
   }
 
@@ -54,6 +74,7 @@
   #actions
   {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     margin-bottom: 3vw;
   }
@@ -131,6 +152,11 @@
     color: var(--lightgrey);
     text-decoration: underline;
     text-decoration-color: var(--lime);
+  }
+
+  #instruction p
+  {
+    font-size: 1.5vw;
   }
 
   #authorFooter

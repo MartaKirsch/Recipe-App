@@ -12,10 +12,18 @@
     <main>
       <div id="wrapper">
 
+
+        <div id="sidebar">
+          <div id="show">
+            <img src="/public/img/search.png" alt="">
+          </div>
+        </div>
+
+        
         <div id="leftWrapper" class="sidewrapper">
           <div id="stickyLeft">
             <div class="filter search">
-              <input autocomplete="off" type="search" name="search" id="searchRecipes" placeholder="You can type in a name of the recipe">
+              <input autocomplete="off" type="search" name="search" id="searchRecipes" placeholder="Type in a name of the recipe">
               <select class="" id="sortBy" name="sortBy">
                 <option value="none">Sort By</option>
                 <option value="rateUp">Rate	&#9650 </option>
@@ -77,6 +85,8 @@
 
         </div>
 
+
+
         <div id="rightWrapper" class="sidewrapper">
 
           <div id="recipes">
@@ -93,5 +103,6 @@
     <script type="text/javascript" src="/public/scripts/loadRecipes.js"></script>
     <script type="text/javascript" src="/public/scripts/loadOnScroll.js"></script>
     <script type="text/javascript" src="/public/scripts/resizeStickyLeft.js"></script>
+    <script type="text/javascript" src="/public/scripts/showLeftWrapper.js"></script>
   </body>
 </html>

@@ -6,6 +6,11 @@
     border-radius: 15px;
   }
 
+  #stickyLeft h1
+  {
+    font-size: 1.67vw;
+  }
+
   #leftWrapper
   {
     padding: 1vw 1vw 0;
@@ -130,6 +135,11 @@
     color: var(--lightgrey);
     text-decoration: underline;
     text-decoration-color: var(--lime);
+  }
+
+  #instruction p
+  {
+    font-size: 1vw;
   }
 
   #authorFooter
