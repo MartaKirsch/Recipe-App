@@ -94,6 +94,7 @@
 
   h1
   {
+    margin: 1vw 0;
     font-size: 2.5vw;
     color: var(--lightgrey);
     text-decoration: underline;

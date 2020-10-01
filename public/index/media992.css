@@ -22,16 +22,12 @@
 
   #leftWrapper
   {
-    /* border-radius: 15px;
-    border: 1px solid var(--lightgrey); */
     flex:1 1 30%;
     justify-content: flex-start;
     display: none;
     position: absolute;
     left: 12vw;
     width: 40%;
-    /* overflow-y: auto; */
-    /* background-color: var(--darkestgrey); */
   }
 
   #leftWrapper.main
@@ -133,6 +129,7 @@
 
   h1
   {
+    margin: 2vw 0;
     font-size: 3vw;
     color: var(--lightgrey);
     text-decoration: underline;

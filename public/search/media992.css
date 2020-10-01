@@ -28,7 +28,7 @@
     justify-content: flex-start;
   }
 
-  
+
 
   #filters
   {
@@ -190,10 +190,12 @@
     padding: 2vw;
     justify-content: space-around;
     display: flex;
+    flex-wrap: nowrap;
   }
 
   .tag
   {
+    margin-bottom: 0;
     padding: 0.7vw 1vw;
     font-size: 1.6vw;
     background-color: var(--lightgrey);

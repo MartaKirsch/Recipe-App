@@ -1,4 +1,312 @@
 @media (min-width:768px){
 
-  
+  #stickyLeft img
+  {
+    width: 26vw;
+    box-shadow: none;
+    border-radius: 15px;
+    margin: 0;
+  }
+
+  #stickyLeft h1
+  {
+    font-size: 3.5vw;
+  }
+
+  #wrapper
+  {
+    flex-direction: column;
+  }
+
+  #leftWrapper.logIn
+  {
+    width: 100%;
+    padding: 1vw 1vw 0;
+    display:block;
+    position: static;
+  }
+
+  #rightWrapper.logIn
+  {
+    margin: auto;
+    width: 90%;
+    justify-content: center;
+    display:block;
+    position: static;
+  }
+
+  #stickyLeft.logIn
+  {
+    justify-content: space-around;
+    top:0;
+    position: static;
+    width: 100%;
+    display: flex;
+    background-color: transparent;
+    border: none;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 3vw;
+  }
+
+  #add
+  {
+    cursor: pointer;
+    color: var(--darkergrey);
+    background-color: var(--lime);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    height: 6vw;
+    width: 6vw;
+    font-size: 2.6vw;
+    position: absolute;
+    top:12.5vw;
+    left: 2vw;
+    border: 2px solid var(--darkestgrey);
+    /* right: 0; */
+  }
+
+  #add:hover
+  {
+    background-color: var(--lime-hover);
+  }
+
+  #add.alreadySaved
+  {
+    color: var(--lightgrey);
+    background-color: var(--hotpink);
+  }
+
+  #add.alreadySaved:hover
+  {
+    background-color: var(--hotpink-hover);
+  }
+
+  #actions
+  {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 4vw;
+  }
+
+  .option
+  {
+    margin-bottom: 1.3vw;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 1.3vw 1vw;
+    font-size:2vw;
+    background-color: var(--lime);
+  }
+
+  .option:hover
+  {
+    background-color: var(--lime-hover);
+  }
+
+  #delete
+  {
+    color:white;
+    background-color: var(--hotpink);
+  }
+  #delete:hover
+  {
+    background-color: var(--hotpink-hover);
+  }
+
+  #tags
+  {
+    width: 100%;
+    padding: 2vw 2vw 0;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag
+  {
+    padding: 1vw;
+    font-size:2vw;
+    margin: 0 1vw 1.5vw;
+    background-color: var(--lightgrey);
+    color: var(--darkergrey);
+    border-radius: 15px;
+    border-bottom: 2px solid var(--lime);
+  }
+
+  #ingredients
+  {
+    font-family: 'Indie Flower', cursive;
+  }
+
+  .row
+  {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--lightgrey);
+    font-size: 3.2vw;
+    padding: 2vw;
+    /* border-bottom: 1px solid var(--lightgrey); */
+  }
+
+  .kcal
+  {
+    margin-left: auto;
+  }
+
+  #instruction h2
+  {
+    font-size:3.5vw;
+    color: var(--lightgrey);
+    text-decoration: underline;
+    text-decoration-color: var(--lime);
+  }
+
+  #instruction p
+  {
+    font-size: 2.3vw;
+  }
+
+  #authorFooter
+  {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  #authorFooter div
+  {
+    font-size: 3.5vw;
+    color: var(--lightgrey);
+    margin-right: 3vw;
+  }
+
+  #authorFooter a
+  {
+    font-size: 4.5vw;
+    font-family: 'Indie Flower', cursive;
+    color: var(--lime);
+  }
+
+  #authorFooter a:focus, #authorFooter a:hover
+  {
+    outline: none;
+    color: var(--lime-hover);
+    text-decoration: underline;
+  }
+
+  #delOpts
+  {
+    text-align: center;
+    color: var(--lightgrey);
+    padding: 1.5vw;
+    font-size: 3vw;
+    border-radius: 15px;
+    border: 3px solid var(--lightgrey);
+  }
+
+  #delButtons
+  {
+    display: flex;
+    justify-content: center;
+  }
+
+  .delOpt, a.delOpt
+  {
+    background-color: var(--hotpink);
+    padding: 1.5vw;
+    border-radius: 15px;
+    font-size: 2vw;
+    text-transform: uppercase;
+    margin: 1vw 2vw 0;
+    cursor: pointer;
+  }
+
+  a.delOpt
+  {
+    background-color: var(--lime);
+    color: var(--darkgrey);
+  }
+
+  a.delOpt:hover, a.delOpt:focus,a.option:hover, a.option:focus
+  {
+    border: none;
+    outline: none;
+    background-color: var(--lime-hover);
+  }
+
+  .delOpt:hover
+  {
+    background-color: var(--hotpink-hover);
+  }
+
+  #rateWrapper
+  {
+    margin: 4vw 0 3vw;
+    display: flex;
+    justify-content: flex-start;
+    color: var(--lightgrey);
+    font-size: 2.2vw;
+  }
+
+  .rateCol
+  {
+    /* width: 25%; */
+    padding: 0 2vw ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rateCol img
+  {
+    margin-left: 1vw;
+    width: 5vw;
+    height: auto;
+  }
+
+  .rateCol select
+  {
+    border:none;
+    font-size: 2vw;
+    padding: 1vw 1.4vw;
+    margin-right: 2vw;
+    cursor: pointer;
+    background-color: var(--lightgrey);
+    color: var(--darkergrey);
+    border-radius: 15px;
+    border-bottom: 2px solid var(--lime);
+    outline: none;
+  }
+
+  .rateCol button
+  {
+    border:none;
+    font-size: 2vw;
+    padding: 1vw 1.3vw;
+    cursor: pointer;
+    background-color: var(--lightgrey);
+    color: var(--darkergrey);
+    border-radius: 15px;
+    border-bottom: 2px solid var(--lime);
+    outline: none;
+  }
+
+  .rateCol select:focus, .rateCol select:hover
+  {
+    background-color: var(--mediumgrey);
+    border-bottom: 2px solid var(--hotpink);
+  }
+
+  .rateCol button:focus,.rateCol button:hover
+  {
+    background-color: var(--mediumgrey);
+    border-bottom: 2px solid var(--hotpink);
+  }
 }
