@@ -12,17 +12,19 @@ const app = express();
 
 const dbURI = 'mongodb+srv://pandeu:alabala00@cluster0.zyijq.mongodb.net/Recipe-App?retryWrites=true&w=majority';
 
-const port = 3000;
+//heroku stuff
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+else
+{
+  dbURI = process.env.MONGODB_URI;
+}
 
-//db connection
 mongoose.connect(dbURI,{ useNewUrlParser: true, useUnifiedTopology: true })
-  .then((result)=>{
-    console.log('connected to db');
-    app.listen(port);
-  })
-  .catch((err)=>{
-    console.log('there is an error: '+err);
-  });
+  .then((result)=>{console.log('connected to db');app.listen(port);})
+  .catch((err)=>{console.log('there is an error: '+err);});
 
 //static files
 app.use('/public', express.static('public'));
