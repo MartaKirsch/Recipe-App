@@ -14,7 +14,7 @@ let dbURI = 'mongodb+srv://pandeu:alabala00@cluster0.zyijq.mongodb.net/Recipe-Ap
 
 //heroku stuff
 let port = process.env.PORT;
-if (port == null || port == "") {
+if (!port || port == null || port == "") {
   port = 3000;
 }
 else
