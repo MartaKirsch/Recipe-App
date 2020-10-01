@@ -19,7 +19,7 @@ if (!port || port == null || port == "") {
 }
 else
 {
-  dbURI = process.env.MONGODB_URI;
+  dbURI = process.env.MONGODB_URI.toString();
 }
 
 mongoose.connect(dbURI,{ useNewUrlParser: true, useUnifiedTopology: true })
