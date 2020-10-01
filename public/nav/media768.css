@@ -1,31 +1,45 @@
 @media (min-width:768px){
   nav
   {
+    display: block;
     position: sticky;
     top:0;
     z-index: 1000;
   }
 
-  #navbar
+  nav:last-child
+  {
+    display: none;
+  }
+
+  .navbar
   {
     color:var(--lightgrey);
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     background-color: var(--darkgrey);
+    border-top:none;
     border-bottom: 2px solid var(--lightgrey);
   }
 
-  #navbar a
+  .navbar a
   {
+    display: block;
     padding: 1.5vw 3vw;
     font-size: 3vw;
   }
 
-  #navbar a:hover, #navbar a:focus
+  .navbar a:hover, .navbar a:focus
   {
     outline:none;
     background-color: #3d3d3d;
+  }
+
+  #minimize
+  {
+    display: none;
   }
 
 }

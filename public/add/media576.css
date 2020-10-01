@@ -1,3 +1,188 @@
 @media (min-width:576px){
-  
+  form
+  {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form h2
+  {
+    margin-top:0;
+  }
+
+  #rightWrapper img
+  {
+    box-shadow: none;
+    border-radius: 15px;
+    width: 40vw;
+    height: auto;
+    margin: 0 auto 5vw;
+  }
+
+  #leftWrapper
+  {
+    padding: 1vw 1vw 0;
+  }
+
+  #rightWrapper
+  {
+    justify-content: flex-start;
+    align-content: center;
+  }
+
+  input[type="text"], select, textarea
+  {
+    background-color: var(--lightgrey);
+    margin: 0 auto 6vw;
+    width: 70%;
+    padding: 2.3vw;
+    font-size: 3vw;
+    border-radius: 15px;
+    border: 3px solid var(--hotpink);
+    transition: width .4s ease-out;
+  }
+
+  input[type="text"]:focus, textarea:focus
+  {
+    width: 75%;
+    background-color: var(--mediumgrey);
+    outline: none;
+    border: 3px solid var(--lime);
+  }
+
+  select:focus
+  {
+    background-color: var(--mediumgrey);
+    outline: none;
+    border: 3px solid var(--lime);
+  }
+
+  input[type="submit"], input[type="button"]
+  {
+    cursor:pointer;
+    text-transform: uppercase;
+    color:var(--lightgrey);
+    background-color: var(--hotpink);
+    margin: auto;
+    width: 50%;
+    padding: 2.3vw;
+    font-size: 3vw;
+    border-radius: 15px;
+    border: 3px solid var(--lightgrey);
+  }
+
+  input[type="submit"]:focus, input[type="submit"]:hover,input[type="button"]:focus, input[type="button"]:hover
+  {
+    outline:none;
+    color: var(--darkgrey);
+    background-color: var(--lime);
+  }
+
+  input.wrongInput,select.wrongInput, textarea.wrongInput
+  {
+    background-color: var(--hotpink);
+    border: 3px solid var(--lightgrey);
+    color: var(--lightgrey);
+  }
+
+  input.wrongInput:hover,select.wrongInput:hover,input.wrongInput:focus,select.wrongInput:focus,textarea.wrongInput:focus, textarea.wrongInput:hover
+  {
+    background-color: var(--hotpink-hover);
+    border: 3px solid var(--lightgrey);
+    color: var(--lightgrey);
+  }
+
+  input.wrongInput::placeholder,select.wrongInput::placeholder,textarea.wrongInput::placeholder
+  {
+    color: var(--lightgrey);
+  }
+
+  label
+  {
+    font-size: 3.8vw;
+    color: var(--lightgrey);
+    /* text-decoration: underline;
+    text-decoration-color: var(--hotpink); */
+    margin-bottom: 2vw;
+  }
+
+  .moreSelects
+  {
+    margin: auto;
+    display: flex;
+    width: 65%;
+    justify-content: space-between;
+  }
+
+  .moreSelects select
+  {
+    width: 40%;
+  }
+
+  .moreTexts
+  {
+    border-bottom: 2px dashed var(--lightgrey);
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .moreTexts input
+  {
+    margin: 3vw 0;
+  }
+
+  .moreTexts input:first-child
+  {
+    width: 45%;
+  }
+
+  .moreTexts input:nth-child(2)
+  {
+    width: 20%;
+  }
+
+  .moreTexts input:nth-child(3)
+  {
+    width: 20%;
+  }
+
+  .deleteIngredient
+  {
+    cursor: pointer;
+    background-color: var(--hotpink);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    font-size: 4vw;
+    width: 6vw;
+    height: 6vw;
+    border-radius: 15px;
+  }
+
+  .deleteIngredient:hover
+  {
+    background-color: var(--hotpink-hover);
+  }
+
+  #addMoreTexts
+  {
+    cursor: pointer;
+    background-color: var(--lime);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2vw auto 3vw;
+    font-size: 4vw;
+    width: 6vw;
+    height: 6vw;
+    border-radius: 15px;
+  }
+
+  #addMoreTexts:hover
+  {
+    background-color: var(--lime-hover);
+  }
 }

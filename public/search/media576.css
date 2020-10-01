@@ -1,3 +1,204 @@
 @media (min-width:576px){
-  
+  form
+  {
+    padding: 0;
+    margin: 0;
+  }
+
+
+  #leftWrapper
+  {
+    /* flex-direction: row; */
+    /* height: auto; */
+    height: 80vh;
+  }
+
+  #stickyLeft
+  {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 4.2vw;
+    z-index: 900;
+  }
+
+
+
+  #rightWrapper
+  {
+    justify-content: flex-start;
+  }
+
+
+
+  #filters
+  {
+    color: var(--lightgrey);
+    display: flex;
+    justify-content: space-around;
+    /* margin: 2vw 0 4vw; */
+    margin: 3vw 0 0;
+    flex-wrap: wrap;
+  }
+
+  .filter
+  {
+    padding: 3vw;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--lightgrey);
+    border-radius: 20px;
+    margin: 0 0 2vw 0;
+    font-size: 3.5vw;
+    cursor:pointer;
+  }
+
+  .filter:hover
+  {
+    background-color: var(--darkergrey-hover);
+  }
+
+  .filter label
+  {
+    margin-right: 3vw;
+    cursor:pointer;
+  }
+
+  .filter input[type="text"], .filter select,.filter input[type="search"]
+  {
+    border-radius: 10px;
+    background-color: var(--lightgrey);
+    flex: none;
+    height: 6.5vw;
+    padding: 1.5vw;
+    font-size: 2.7vw;
+  }
+
+  .search select
+  {
+    width: 50%;
+    height: 6.5vw;
+    margin: 2vw auto 0;
+  }
+
+  .filter input[type="text"]
+  {
+    width: 10vw;
+  }
+
+  .filter input[type="search"]
+  {
+    width: 70%;
+  }
+
+  .filter h2
+  {
+    margin: 0 1vw;
+  }
+
+  .search
+  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3vw;
+    background-color: var(--darkestgrey);
+    border: none;
+    margin: 0 auto 0;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .search:hover
+  {
+    background-color: var(--darkgrey);
+  }
+
+  .search input[type="search"]
+  {
+    width: 100%;
+    height: 6.5vw;
+    border: none;
+  }
+
+  input[type="submit"], input[type="button"]
+  {
+    color: var(--lightgrey);
+    background-color: var(--darkergrey);
+    cursor:pointer;
+    font-size: 3.3vw;
+    border: 2px solid var(--lime);
+    border-radius: 15px;
+    padding: 1.5vw;
+    width: 50%;
+    margin: 3vw auto 2vw;
+  }
+
+  input[type="submit"]:hover, input[type="submit"]:focus, input[type="button"]:hover, input[type="button"]:focus
+  {
+    outline: none;
+    background-color: var(--darkgrey);
+  }
+
+  #recipes a
+  {
+    background-color: var(--darkestgrey);
+    margin-bottom: 7vw;
+    border-radius: 15px;
+    /* border-right: 2px solid var(--lightgrey); */
+    padding: 3vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  #recipes a:hover, #recipes a:focus
+  {
+    background-color: var(--darkergrey-hover);
+  }
+
+  #recipes a img
+  {
+    width: 30vw;
+  }
+
+  #recipes a:last-child
+  {
+    margin:0;
+  }
+
+  .recipesText
+  {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:white;
+  }
+
+  .recipesName
+  {
+    font-size: 4.5vw;
+    padding-left: 2.5vw;
+  }
+
+  .tags
+  {
+    width: 100%;
+    padding: 2.5vw 0 2.5vw 2vw;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag
+  {
+    padding: 1vw 1.3vw;
+    font-size: 3vw;
+    background-color: var(--lightgrey);
+    color: var(--darkergrey);
+    border-radius: 15px;
+    border-bottom: 2px solid var(--lime);
+    margin-bottom: 1vw;
+  }
 }

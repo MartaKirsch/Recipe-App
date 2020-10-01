@@ -86,10 +86,12 @@
 
   #actions
   {
+    width: auto;
     align-self: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin: 0;
     margin-bottom: 4vw;
   }
 

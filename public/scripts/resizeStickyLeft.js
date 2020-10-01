@@ -1,20 +1,24 @@
 const resize = (e) => {
 
-  // document.querySelector('#stickyLeft').style.height = (window.innerHeight - 150)+'px';
+  let navbars = document.querySelectorAll('.navbar');
+  let navbar = navbars[navbars.length-1];
 
-  let navbar = document.querySelector('#navbar');
+  if(window.innerWidth>=768)
+  {
+    navbar = navbars[0];
+  }
   let nav = parseFloat(window.getComputedStyle(navbar, null).getPropertyValue('height'));
   let wrapper =  document.querySelector('#wrapper');
   let padding = 2.5 * parseFloat(window.getComputedStyle(wrapper, null).getPropertyValue('padding-left'));
 
-  if(!leftWrapper.classList.contains('recipe')&&window.innerWidth<=1200)
+  if(leftWrapper.classList.contains('recipe')||leftWrapper.classList.contains('logIn'))
   {
-    //set the stickyleft height so it's in the middle of the window (top/bottom)
-    document.querySelector('#stickyLeft').style.height = (window.innerHeight - nav - padding)+'px';
+    document.querySelector('#stickyLeft').style.height = 'auto';
   }
   else
   {
-    document.querySelector('#stickyLeft').style.height = 'auto';
+    //set the stickyleft height so it's in the middle of the window (top/bottom)
+    document.querySelector('#stickyLeft').style.height = (window.innerHeight - nav - padding)+'px';
   }
 
   if(window.innerWidth<=1200 && !leftWrapper.classList.contains('logIn'))

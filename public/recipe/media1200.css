@@ -152,6 +152,7 @@
 
   #instruction h2
   {
+    margin: 3vw 0 2vw;
     font-size:1.9vw;
     color: var(--lightgrey);
     text-decoration: underline;
