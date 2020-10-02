@@ -99,7 +99,8 @@
     height: 15vw;
     position: -webkit-sticky;
     position: sticky;
-    top: 4vw;
+    top: 5.5vw;
+    left: 2.2vw;
     padding: 3vw;
     margin-right: 2vw;
   }
@@ -119,9 +120,9 @@
   #leftWrapper img
   {
     border-radius: 35vw;
-    margin: 0 auto 2vw;
+    margin: 10vw auto 4vw;
     height: auto;
-    width: 57vw;
+    width: 67vw;
     -webkit-box-shadow: -10px 10px 15px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: -10px 10px 15px 0px rgba(0,0,0,0.75);
     box-shadow: -10px 10px 15px 0px rgba(0,0,0,0.75);
@@ -130,7 +131,7 @@
   h1
   {
     margin: 3vw 0;
-    font-size: 6.5vw;
+    font-size: 7vw;
     color: var(--lightgrey);
     text-decoration: underline;
     text-decoration-color: var(--hotpink);
@@ -139,7 +140,7 @@
   p
   {
     width: 100%;
-    font-size: 4vw;
+    font-size: 4.2vw;
     color: white;
     text-align: justify;
     /* line-height: 1.5vw; */

@@ -100,6 +100,7 @@
     position: -webkit-sticky;
     position: sticky;
     top: 4vw;
+    left:0;
     padding: 2vw;
     margin-right: 2vw;
   }

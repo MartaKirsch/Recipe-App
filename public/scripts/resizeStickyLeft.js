@@ -15,6 +15,11 @@ const resize = (e) => {
   {
     document.querySelector('#stickyLeft').style.height = 'auto';
   }
+  else if(window.innerWidth<=576)
+  {
+    //set the stickyleft height so it's in the middle of the window (top/bottom)
+    document.querySelector('#stickyLeft').style.height = (window.innerHeight - nav - padding - 50)+'px';
+  }
   else
   {
     //set the stickyleft height so it's in the middle of the window (top/bottom)
