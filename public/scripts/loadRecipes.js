@@ -5,75 +5,110 @@ const generateATags = (docs, clearFirst) => {
     document.querySelector('#recipes').innerHTML = '';
   }
 
-  docs.forEach(doc=>{
+  //if no recipes are found
+  if(docs.length==0 && clearFirst)
+  {
     //create all the elements
     let a = document.createElement('a');
     let img = document.createElement('img');
     let recipesText = document.createElement('div');
     let recipesName = document.createElement('div');
-    let tags = document.createElement('div');
-
-    let tastesArr = [];
-    doc.tastes.forEach((taste) => {
-      tastesArr.push(document.createElement('div'));
-    });
-
-    let meal = document.createElement('div');
-    let meatvege = document.createElement('div');
-    let kcal = document.createElement('div');
 
     //set up all the created elements
 
-      //urls
-    a.href = `/recipes/recipe/${doc._id}`;
+    //url
+    img.src = '/public/img/dinner.png';
 
-    img.src = doc.imgURL;
-
-      //classes
+    //classes
     recipesText.classList.add('recipesText');
     recipesName.classList.add('recipesName');
-    tags.classList.add('tags');
 
-    meal.classList.add('tag');
-    meatvege.classList.add('tag');
-    kcal.classList.add('tag');
-    meal.classList.add('tag');
+    //innerHTML
+    recipesName.innerHTML = 'No Recipes Found!';
 
-      //innerHTMLs
-    meal.innerHTML = doc.meal;
-    meatvege.innerHTML = doc.meatvege;
-    kcal.innerHTML = doc.sumOfKcal + "kcal";
-    recipesName.innerHTML = doc.name;
-
-    for(let i=0; i<tastesArr.length; i++)
-    {
-      tastesArr[i].classList.add('tag');
-      tastesArr[i].innerHTML = doc.tastes[i];
-    }
-
-    //put everything together
-
-      //tags
-    tags.appendChild(kcal);
-    tags.appendChild(meal);
-    tastesArr.forEach((taste) => {
-      tags.appendChild(taste);
-    });
-    tags.appendChild(meatvege);
-
-      //recipesText
+    //put recipesText together
     recipesText.appendChild(recipesName);
-    recipesText.appendChild(tags);
 
-      //a tag
+    //pu a tag together
     a.appendChild(img);
     a.appendChild(recipesText);
 
     document.querySelector('#recipes').appendChild(a);
+  }
+
+  //if there are recipes found
+  else
+  {
+    docs.forEach(doc=>{
+      //create all the elements
+      let a = document.createElement('a');
+      let img = document.createElement('img');
+      let recipesText = document.createElement('div');
+      let recipesName = document.createElement('div');
+      let tags = document.createElement('div');
+
+      let tastesArr = [];
+      doc.tastes.forEach((taste) => {
+        tastesArr.push(document.createElement('div'));
+      });
+
+      let meal = document.createElement('div');
+      let meatvege = document.createElement('div');
+      let kcal = document.createElement('div');
+
+      //set up all the created elements
+
+        //urls
+      a.href = `/recipes/recipe/${doc._id}`;
+
+      img.src = doc.imgURL;
+
+        //classes
+      recipesText.classList.add('recipesText');
+      recipesName.classList.add('recipesName');
+      tags.classList.add('tags');
+
+      meal.classList.add('tag');
+      meatvege.classList.add('tag');
+      kcal.classList.add('tag');
+      meal.classList.add('tag');
+
+        //innerHTMLs
+      meal.innerHTML = doc.meal;
+      meatvege.innerHTML = doc.meatvege;
+      kcal.innerHTML = doc.sumOfKcal + "kcal";
+      recipesName.innerHTML = doc.name;
+
+      for(let i=0; i<tastesArr.length; i++)
+      {
+        tastesArr[i].classList.add('tag');
+        tastesArr[i].innerHTML = doc.tastes[i];
+      }
+
+      //put everything together
+
+        //tags
+      tags.appendChild(kcal);
+      tags.appendChild(meal);
+      tastesArr.forEach((taste) => {
+        tags.appendChild(taste);
+      });
+      tags.appendChild(meatvege);
+
+        //recipesText
+      recipesText.appendChild(recipesName);
+      recipesText.appendChild(tags);
+
+        //a tag
+      a.appendChild(img);
+      a.appendChild(recipesText);
+
+      document.querySelector('#recipes').appendChild(a);
 
 
 
-  });
+    });
+  }
 
 };
 

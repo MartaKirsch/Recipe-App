@@ -142,7 +142,7 @@
   #recipes a
   {
     background-color: var(--darkestgrey);
-    margin-bottom: 7vw;
+    margin: 0 0 7vw 0;
     border-radius: 15px;
     /* border-right: 2px solid var(--lightgrey); */
     padding: 3vw;
@@ -205,4 +205,5 @@
     border-bottom: 2px solid var(--lime);
     margin-bottom: 1vw;
   }
+
 }
