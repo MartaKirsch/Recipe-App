@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 //create app
 const app = express();
 
-let dbURI = 'mongodb+srv://pandeu:alabala00@cluster0.zyijq.mongodb.net/Recipe-App?retryWrites=true&w=majority';
+let dbURI = '';
 
 //heroku stuff
 let port = process.env.PORT;
