@@ -1,3 +1,4 @@
+
 const generateATags = (docs, clearFirst) => {
 
   if(clearFirst)
@@ -114,14 +115,18 @@ const generateATags = (docs, clearFirst) => {
 
 const loadRecipes = async (e) => {
 
+  let kcalmin = "";
+  let kcalmax = "";
+
   //inputs
   const name = document.querySelector('input[name="search"]');
   const meal = document.querySelector('select[name="meal"]');
   const meatvege = document.querySelector('select[name="meatvege"]');
   const taste = document.querySelector('select[name="taste"]');
   const sortBy = document.querySelector('#sortBy');
-  const kcalmin = document.querySelector('input[name="kcalmin"]');
-  const kcalmax = document.querySelector('input[name="kcalmax"]');
+  kcalmin = document.querySelector('input[name="kcalmin"]');
+  kcalmax = document.querySelector('input[name="kcalmax"]');
+
 
   let added = '';
 
@@ -133,6 +138,7 @@ const loadRecipes = async (e) => {
   else if(e.type == 'submit')
   {
     //prevent form's default behaviour
+    console.log('prevent');
     e.preventDefault();
   }
 
@@ -215,7 +221,7 @@ formInputs.forEach((input) => {
 window.onload = ()=>{
   if(document.querySelector('form#filters')!=null)
   {
-    let event = new Event('submit');
+    let event = new Event('submit', { cancelable: true });
     document.querySelector('#filters').dispatchEvent(event);
     let evt = new Event('resize');
     window.dispatchEvent(evt);

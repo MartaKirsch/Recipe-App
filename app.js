@@ -41,6 +41,12 @@ app.set('view engine', 'ejs');
 //session
 app.use(session({secret: 'ssshhhhh', resave:true, saveUninitialized: false}));
 
+//cors
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 
 //home page
 app.get('/', (req,res)=>{

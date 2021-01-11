@@ -198,6 +198,12 @@ const load = async (req, res) => {
     ascDesc = -1;
   }
 
+
+
+  console.log(searchObj);
+  console.log("hello, i'm server");
+
+
   //searching for all or by the author
   if(data.added == 'Added' || data.added == 'searchByAuthor'|| !data.added || data.added == "")
   {
@@ -219,8 +225,13 @@ const load = async (req, res) => {
     .sort([[sortByOption , ascDesc]])
     .then((docs)=>{
 
+      res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+      res.setHeader("Access-Control-Allow-Headers", "Authorization, Cache-Control, Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+
+      console.log(docs);
+      console.log("retrieved docs");
       //send the recipes to the frontend
-      res.json(docs);
+      res.status(200).json(docs);
 
     })
     .catch(err=>console.log(err));
