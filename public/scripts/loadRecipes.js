@@ -138,7 +138,7 @@ const loadRecipes = async (e) => {
   else if(e.type == 'submit')
   {
     //prevent form's default behaviour
-    console.log('prevent');
+    //console.log('prevent');
     e.preventDefault();
   }
 
@@ -185,7 +185,7 @@ const loadRecipes = async (e) => {
     })
  .then(res=>res.json());
 
-  console.log(data);
+  //console.log(data);
 
   //generate the a tags of the recipesName
   //if it comes from a form - delete previous content
@@ -213,7 +213,7 @@ document.querySelector('#filters').addEventListener('submit', loadRecipes);
 const formInputs = document.querySelectorAll('#leftWrapper input,#leftWrapper select');
 formInputs.forEach((input) => {
   input.addEventListener('change', ()=>{
-    let event = new Event('submit');
+    let event = new Event('submit',{ cancelable: true });
     document.querySelector('#filters').dispatchEvent(event);
   });
 });
